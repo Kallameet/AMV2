@@ -33,6 +33,7 @@ ack_o	: out  STD_ULOGIC
 END COMPONENT;
 
 constant busInInit	: aBusIn	:= (clk_i 	=> '0',
+									rst_i	=> '0',
 									dat_i 	=> (others => '0'),
 									ack_i 	=> '0');
 								
@@ -46,7 +47,7 @@ constant busOutInit	: aBusOut	:= (we_o 	=> '0',
 signal busIn	: aBusIn	:= busInInit;
 signal busOut	: aBusOut	:= busOutInit;
 
-constant cEndAdress : natural := (2**cAddrWidth)-1;
+constant cEndAddress : natural := (2**cAddrWidth)-1;
 constant testInput1 : std_ulogic_vector(cDataWidth-1 downto 0) := x"AAAAAAAA";
 constant testInput2 : std_ulogic_vector(cDataWidth-1 downto 0) := x"55555555";
 
@@ -66,14 +67,14 @@ ack_o => busIn.ack_i
 );
 
 CLOCK:
-clk <=  '1' after 5 ns when clk = '0' else
-        '0' after 5 ns when clk = '1';
+busIn.clk_i <=  '1' after 5 ns when busIn.clk_i = '0' else
+        '0' after 5 ns when busIn.clk_i = '1';
 
 Stimuli : process is
 variable rd : std_ulogic_vector(cDataWidth-1 downto 0) := (others => '0');
-variable addressBlock	: aAddrBlock(0 to cEndAdress) := (others => (others => '0'));
-variable dataBlock		: aDataBlock(0 to cEndAdress) := (others => (others => '0'));
-variable readDataBlock	: aDataBlock(0 to cEndAdress) := (others => (others => '0'));
+variable addressBlock	: aAddrBlock(0 to cEndAddress) := (others => (others => '0'));
+variable dataBlock		: aDataBlock(0 to cEndAddress) := (others => (others => '0'));
+variable readDataBlock	: aDataBlock(0 to cEndAddress) := (others => (others => '0'));
 begin
   
   --test Single Read Write with data 10101...
@@ -104,17 +105,17 @@ begin
 	
 	--test Block Read Write with data 1010101...
 	for i in 0 to cEndAddress loop
-		addressBlock(i) := std_ulogic_vector(to_unsigned(i, cAddrWidth);
+		addressBlock(i) := std_ulogic_vector(to_unsigned(i, cAddrWidth));
 		dataBlock(i)	:= testInput1;
 	end loop;
 	
 	BlockWrite(addressBlock, -- address
 		dataBlock, -- data
-		busIn, busOut);
+		cEndAddress+1, busIn, busOut);
 	
 	BlockRead(addressBlock, -- address
 		readDataBlock, -- data
-		busIn, busOut);
+		cEndAddress+1, busIn, busOut);
 		
 	for i in 0 to cEndAddress loop
 		assert readDataBlock(i) = testInput1
@@ -125,17 +126,17 @@ begin
 	
 		--test Block Read Write with data 01010101...
 	for i in 0 to cEndAddress loop
-		addressBlock(i) := std_ulogic_vector(to_unsigned(i, cAddrWidth);
+		addressBlock(i) := std_ulogic_vector(to_unsigned(i, cAddrWidth));
 		dataBlock(i)	:= testInput2;
 	end loop;
 	
 	BlockWrite(addressBlock, -- address
 		dataBlock, -- data
-		busIn, busOut);
+		cEndAddress+1, busIn, busOut);
 	
 	BlockRead(addressBlock, -- address
 		readDataBlock, -- data
-		busIn, busOut);
+		cEndAddress+1, busIn, busOut);
 		
 	for i in 0 to cEndAddress loop
 		assert readDataBlock(i) = testInput2
