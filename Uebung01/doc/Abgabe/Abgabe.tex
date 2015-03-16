@@ -70,10 +70,25 @@ title=\lstname %zeigt titel der datei an
 	\item Die VHDL-Anweisung \texttt{wait until} pausiert einen Prozess so lange bis sich eines der Signale im Statement ändert die gegebene Bedingung erfüllt ist. 
 	Das heißt bei \texttt{wait until clk\_i = '1'} wird auf die steigende Flanke von \texttt{clk\_i} gewartet. Wenn \texttt{clk\_i} bereits \texttt{'1'} ist wird so lange gewartet bis wieder eine steigende Flanke kommt.
 	\item Bei dieser VHDL-Anweisung wird so lange gewartet bis \texttt{ack\_i} während einer Änderung von \texttt{clk\_i '1'} ist.
-	\item Das RAM könnte sonst nicht verbunden werden. In VHDL werden Signals verwendet um Paralellität zu modellieren.
+	\item Das RAM könnte sonst nicht verbunden werden. In VHDL werden Signals verwendet um Parallelität zu modellieren.
 \end{itemize}
 
 Quelle: \url{http://www.ics.uci.edu/~jmoorkan/vhdlref}
+
+\section{Testfälle}
+Es wurden die unten aufgelisteten Funktionen der BFM getestet. Dazu wurde der gesamte Speicherbereich des RAM zweimal geschrieben und gelesen. Beim ersten Mal waren auf der Datenleitung alle geraden Bit 1 und ungeraden Bit 0. Beim zweiten Mal wurde der Wert invertiert. 
+\\
+Zusätzlich gibt es noch einen Idle Test der überprüft ob alle Signale auf 'Z' gesetzt sind und einen Test der zur Kontrolle fehlschlagen soll.
+\\
+Getestet wurde lokal am Rechner mit Questasim, da der Applicationserver bei beiden Gruppenmitgliedern nicht funktionierte.
+
+\begin{itemize}
+	\item SingleRead
+	\item SingleWrite
+	\item BlockRead
+	\item BlockWrite
+	\item Idle
+\end{itemize}
 
 \section{Source Code}
 

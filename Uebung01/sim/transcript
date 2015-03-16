@@ -1,16 +1,16 @@
-# Reading C:/altera/14.1/modelsim_ase/tcl/vsim/pref.tcl
-do COmpile.do
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:30:38 on Mar 16,2015
+# Reading E:/Programme/Modeltech_pe_edu_10.4/tcl/vsim/pref.tcl
+do compile.do
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 22:34:42 on Mar 16,2015
 # vlog -reportprogress 300 ../src/ram.sv 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 15:30:38 on Mar 16,2015, Elapsed time: 0:00:00
+# End time: 22:34:42 on Mar 16,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:30:38 on Mar 16,2015
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 22:34:42 on Mar 16,2015
 # vcom -reportprogress 300 ../src/WishboneBFM-p.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -18,10 +18,10 @@ do COmpile.do
 # -- Compiling package WishboneBFM
 # -- Compiling package body WishboneBFM
 # -- Loading package WishboneBFM
-# End time: 15:30:39 on Mar 16,2015, Elapsed time: 0:00:01
+# End time: 22:34:42 on Mar 16,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:30:39 on Mar 16,2015
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 22:34:42 on Mar 16,2015
 # vcom -reportprogress 300 ../src/WishboneBFM-tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -30,166 +30,83 @@ do COmpile.do
 # -- Loading package WishboneBFM
 # -- Compiling entity tbWishboneBFM
 # -- Compiling architecture bhv of tbWishboneBFM
-# End time: 15:30:40 on Mar 16,2015, Elapsed time: 0:00:01
+# ** Error: ../src/WishboneBFM-tb.vhd(144): near "in": (vcom-1576) expecting ';'.
+# 
+# ** Error: ../src/WishboneBFM-tb.vhd(180): near "process": (vcom-1576) expecting ';'.
+# 
+# End time: 22:34:42 on Mar 16,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vcom failed.
+# Error in macro ./compile.do line 3
+# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vcom failed.
+#     while executing
+# "vcom ../src/WishboneBFM-tb.vhd"
+do compile.do
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 22:35:08 on Mar 16,2015
+# vlog -reportprogress 300 ../src/ram.sv 
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# End time: 22:35:08 on Mar 16,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 22:35:08 on Mar 16,2015
+# vcom -reportprogress 300 ../src/WishboneBFM-p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package WishboneBFM
+# -- Compiling package body WishboneBFM
+# -- Loading package WishboneBFM
+# End time: 22:35:08 on Mar 16,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 22:35:08 on Mar 16,2015
+# vcom -reportprogress 300 ../src/WishboneBFM-tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package WishboneBFM
+# -- Compiling entity tbWishboneBFM
+# -- Compiling architecture bhv of tbWishboneBFM
+# End time: 22:35:09 on Mar 16,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 do sim.do
+# //  ModelSim PE Student Edition 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# // NOT FOR CORPORATE OR PRODUCTION USE.
+# // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
+# // FOR HIGHER EDUCATION PURPOSES ONLY
+# //
 # vsim -gui 
-# Start time: 15:30:59 on Mar 16,2015
+# Start time: 22:35:14 on Mar 16,2015
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.wishbonebfm(body)
 # Loading work.tbwishbonebfm(bhv)
-# ALTERA version supports only a single HDL
+# PE Student Edition supports only a single HDL
 # ** Error: (vsim-3039) ../src/WishboneBFM-tb.vhd(55): Instantiation of 'RAM' failed.
-# 
-#         Region: /tbwishbonebfm
+#    Time: 0 ns  Iteration: 0  Instance: /tbwishbonebfm File: ../src/WishboneBFM-tb.vhd
 # Error loading design
 # Error: Error loading design
 #        Pausing macro execution
 # MACRO ./sim.do PAUSED at line 1
-do Compile.do
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:47:40 on Mar 16,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 15:47:41 on Mar 16,2015, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:47:42 on Mar 16,2015
-# vcom -reportprogress 300 ../src/WishboneBFM-p.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package WishboneBFM
-# -- Compiling package body WishboneBFM
-# -- Loading package WishboneBFM
-# ** Error: ../src/WishboneBFM-p.vhd(193): Target type ieee.std_logic_1164.STD_ULOGIC_VECTOR in signal assignment is different from expression type.
-# ** Error: ../src/WishboneBFM-p.vhd(194): Target type ieee.std_logic_1164.STD_ULOGIC_VECTOR in signal assignment is different from expression type.
-# ** Error: ../src/WishboneBFM-p.vhd(196): Target type ieee.std_logic_1164.STD_ULOGIC_VECTOR in signal assignment is different from expression type.
-# ** Error: ../src/WishboneBFM-p.vhd(201): VHDL Compiler exiting
-# End time: 15:47:43 on Mar 16,2015, Elapsed time: 0:00:01
-# Errors: 4, Warnings: 0
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./Compile.do line 2
-# C:/altera/14.1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom ../src/WishboneBFM-p.vhd"
-do Compile.do
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:48:17 on Mar 16,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 15:48:17 on Mar 16,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:48:17 on Mar 16,2015
-# vcom -reportprogress 300 ../src/WishboneBFM-p.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package WishboneBFM
-# -- Compiling package body WishboneBFM
-# -- Loading package WishboneBFM
-# ** Error: ../src/WishboneBFM-p.vhd(195): Target type ieee.std_logic_1164.STD_ULOGIC in signal assignment is different from expression type.
-# ** Error: ../src/WishboneBFM-p.vhd(195): (vcom-1076) OTHERS choice cannot be used in unconstrained array aggregate.
-# 
-# ** Error: ../src/WishboneBFM-p.vhd(197): Target type ieee.std_logic_1164.STD_ULOGIC in signal assignment is different from expression type.
-# ** Error: ../src/WishboneBFM-p.vhd(197): (vcom-1076) OTHERS choice cannot be used in unconstrained array aggregate.
-# 
-# ** Error: ../src/WishboneBFM-p.vhd(198): Target type ieee.std_logic_1164.STD_ULOGIC in signal assignment is different from expression type.
-# ** Error: ../src/WishboneBFM-p.vhd(198): (vcom-1076) OTHERS choice cannot be used in unconstrained array aggregate.
-# 
-# ** Error: ../src/WishboneBFM-p.vhd(201): VHDL Compiler exiting
-# End time: 15:48:17 on Mar 16,2015, Elapsed time: 0:00:00
-# Errors: 7, Warnings: 0
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./Compile.do line 2
-# C:/altera/14.1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom ../src/WishboneBFM-p.vhd"
-do Compile.do
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:48:57 on Mar 16,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 15:48:57 on Mar 16,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:48:57 on Mar 16,2015
-# vcom -reportprogress 300 ../src/WishboneBFM-p.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package WishboneBFM
-# -- Compiling package body WishboneBFM
-# -- Loading package WishboneBFM
-# ** Error: ../src/WishboneBFM-p.vhd(196): Target type ieee.std_logic_1164.STD_ULOGIC_VECTOR in signal assignment is different from expression type.
-# ** Error: ../src/WishboneBFM-p.vhd(201): VHDL Compiler exiting
-# End time: 15:48:57 on Mar 16,2015, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./Compile.do line 2
-# C:/altera/14.1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom ../src/WishboneBFM-p.vhd"
-do Compile.do
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:49:52 on Mar 16,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 15:49:52 on Mar 16,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:49:52 on Mar 16,2015
-# vcom -reportprogress 300 ../src/WishboneBFM-p.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package WishboneBFM
-# -- Compiling package body WishboneBFM
-# -- Loading package WishboneBFM
-# End time: 15:49:52 on Mar 16,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:49:52 on Mar 16,2015
-# vcom -reportprogress 300 ../src/WishboneBFM-tb.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package WishboneBFM
-# -- Compiling entity tbWishboneBFM
-# -- Compiling architecture bhv of tbWishboneBFM
-# End time: 15:49:53 on Mar 16,2015, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-do Sim.do
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.wishbonebfm(body)
-# Loading work.tbwishbonebfm(bhv)
-# ALTERA version supports only a single HDL
-# ** Error: (vsim-3039) ../src/WishboneBFM-tb.vhd(55): Instantiation of 'RAM' failed.
-# 
-#         Region: /tbwishbonebfm
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./Sim.do PAUSED at line 1
-# End time: 16:05:54 on Mar 16,2015, Elapsed time: 0:34:55
-# Errors: 2, Warnings: 0
+# End time: 22:35:18 on Mar 16,2015, Elapsed time: 0:00:04
+# Errors: 1, Warnings: 0
