@@ -38,8 +38,8 @@ inputencoding={ansinew},
 title=\lstname %zeigt titel der datei an
 }
 
-\usepackage{pdfpages}% fuer pdfs
-
+\usepackage{pdfpages} % fuer pdfs
+\usepackage{hyperref} % fuer url
 
 
 %keine einrückungen bei absatz
@@ -65,6 +65,15 @@ title=\lstname %zeigt titel der datei an
 \includepdf[pages=-]{../Angabe.pdf}
 
 \section{Beantwortung der Fragen}
+
+\begin{itemize}
+	\item Die VHDL-Anweisung \texttt{wait until} pausiert einen Prozess so lange bis sich eines der Signale im Statement ändert die gegebene Bedingung erfüllt ist. 
+	Das heißt bei \texttt{wait until clk\_i = '1'} wird auf die steigende Flanke von \texttt{clk\_i} gewartet. Wenn \texttt{clk\_i} bereits \texttt{'1'} ist wird so lange gewartet bis wieder eine steigende Flanke kommt.
+	\item Bei dieser VHDL-Anweisung wird so lange gewartet bis \texttt{ack\_i} während einer Änderung von \texttt{clk\_i '1'} ist.
+	\item Das RAM könnte sonst nicht verbunden werden. In VHDL werden Signals verwendet um Paralellität zu modellieren.
+\end{itemize}
+
+Quelle: \url{http://www.ics.uci.edu/~jmoorkan/vhdlref}
 
 \section{Source Code}
 
