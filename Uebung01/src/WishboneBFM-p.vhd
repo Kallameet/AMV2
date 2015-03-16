@@ -35,6 +35,18 @@ package WishboneBFM is
   type aAddrBlock is array (natural range <>) of std_ulogic_vector(cAddrWidth-1 downto 0);
   type aDataBlock is array (natural range <>) of std_ulogic_vector(cDataWidth-1 downto 0);
   
+  constant busInInit	: aBusIn	:= (clk_i 	=> '0',
+									    rst_i	=> '0',
+									    dat_i 	=> (others => '0'),
+									    ack_i 	=> '0');
+								
+  constant busOutInit	: aBusOut	:= (we_o 	=> '0',
+										adr_o	=> (others => '0'),
+										dat_o	=> (others => '0'),
+										sel_o	=> (others => '0'),
+										stb_o	=> '0',
+										cyc_o	=> '0');
+  
   procedure SingleRead (
     constant addr : in std_ulogic_vector(cAddrWidth-1 downto 0);
     variable data : out std_ulogic_vector(cDataWidth-1 downto 0); -- variable ?

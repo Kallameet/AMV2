@@ -32,6 +32,18 @@ ack_o	: out  STD_ULOGIC
  );
 END COMPONENT;
 
+constant busInInit	: aBusIn	:= (clk_i 	=> '0',
+									rst_i	=> '0',
+									dat_i 	=> (others => '0'),
+									ack_i 	=> '0');
+								
+constant busOutInit	: aBusOut	:= (we_o 	=> '0',
+									adr_o	=> (others => '0'),
+									dat_o	=> (others => '0'),
+									sel_o	=> (others => '0'),
+									stb_o	=> '0',
+									cyc_o	=> '0');
+
 signal busIn	: aBusIn	:= busInInit;
 signal busOut	: aBusOut	:= busOutInit;
 
@@ -136,7 +148,6 @@ assert false
     report "This is not a failure: Simulation finished !!!"
     severity failure;
     
-    wait;
 end process;
 
 end architecture;
