@@ -72,6 +72,9 @@ package WishboneBFM is
 	constant len  : in natural;
     signal busin  : in aBusIn;
     signal busout : out aBusOut);
+	
+  procedure Idle (
+    signal busout : out aBusOut);
 		
 end WishboneBFM;
 
@@ -183,5 +186,16 @@ package body WishboneBFM is
 	
   end BlockWrite;
 
+  -- Idle
+  procedure Idle (
+    signal busout : out aBusOut) is 
+  begin
+	busout.adr_o <= (others => 'Z');
+	busout.dat_o <= (others => 'Z');
+	busout.we_o <= 'Z';
+	busout.sel_o <= (others => 'Z');
+	busout.cyc_o <= 'Z';
+	busout.stb_o <= 'Z';
+  end Idle;
 
 end WishboneBFM;
