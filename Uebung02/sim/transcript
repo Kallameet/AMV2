@@ -1,0 +1,135 @@
+# Reading C:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+do COmpile.do
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Warning: ../src/wishbone_bfm.sv(66): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# -- Compiling package wishbone_bfm_sv_unit
+# -- Compiling module top
+# -- Compiling program test
+# ** Warning: ../src/wishbone_bfm.sv(66): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# 
+# Top level modules:
+# 	top
+do COmpile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Warning: ../src/wishbone_bfm.sv(66): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# -- Compiling interface wishboneBus
+# -- Compiling package wishbone_bfm_sv_unit
+# -- Compiling module top
+# -- Compiling program test
+# ** Warning: ../src/wishbone_bfm.sv(66): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# -- Compiling interface wishboneBus
+# 
+# Top level modules:
+# 	top
+do COmpile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Warning: ../src/wishbone_bfm.sv(67): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# -- Compiling interface wishbone_if
+# -- Compiling package wishbone_bfm_sv_unit
+# -- Compiling module top
+# -- Compiling program test
+# ** Warning: ../src/wishbone_bfm.sv(67): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# -- Compiling interface wishbone_if
+# 
+# Top level modules:
+# 	top
+do COmpile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Warning: ../src/wishbone_bfm.sv(67): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# -- Compiling interface wishbone_if
+# -- Compiling package wishbone_bfm_sv_unit
+# -- Compiling module top
+# -- Compiling program test
+# ** Warning: ../src/wishbone_bfm.sv(67): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# -- Compiling interface wishbone_if
+# 
+# Top level modules:
+# 	top
+do COmpile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: ../src/wishbone_bfm.sv(27): near "and": syntax error, unexpected and, expecting or or ')' or ','
+# ** Warning: ../src/wishbone_bfm.sv(75): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# -- Compiling interface wishbone_if
+# ** Error: C:/altera/13.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./COmpile.do line 3
+# C:/altera/13.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/wishbone_bfm.sv"
+do COmpile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: ../src/wishbone_bfm.sv(27): near "=": syntax error, unexpected '=', expecting ++ or --
+# ** Warning: ../src/wishbone_bfm.sv(75): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# -- Compiling interface wishbone_if
+# ** Error: C:/altera/13.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./COmpile.do line 3
+# C:/altera/13.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/wishbone_bfm.sv"
+do COmpile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: ../src/wishbone_bfm.sv(28): near "endtask": syntax error, unexpected endtask
+# ** Warning: ../src/wishbone_bfm.sv(75): (vlog-LRM-2244) Variable 'bfm' is implicitly static. You must explicitly declare it as static or automatic.
+# 
+# -- Compiling interface wishbone_if
+# ** Error: C:/altera/13.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./COmpile.do line 3
+# C:/altera/13.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/wishbone_bfm.sv"
