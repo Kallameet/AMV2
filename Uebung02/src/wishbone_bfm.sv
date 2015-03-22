@@ -92,6 +92,7 @@ interface wishbone_if # (
     parameter int gDataWidth = 32,
     parameter int gAddrWidth = 8
   )(
+    input bit clk
   );
 
   logic [gAddrWidth-1:0] adr;
