@@ -1,619 +1,456 @@
-# Reading C:/altera/14.1/modelsim_ase/tcl/vsim/pref.tcl
-do Compile.do
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 12:45:20 on Mar 23,2015
+# Reading E:/Programme/Modeltech_pe_edu_10.4/tcl/vsim/pref.tcl
+do compile.do
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:05:38 on Mar 23,2015
 # vlog -reportprogress 300 ../src/ram.sv 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 12:45:22 on Mar 23,2015, Elapsed time: 0:00:02
+# End time: 20:05:39 on Mar 23,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 12:45:22 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:05:39 on Mar 23,2015
 # vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(78): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# ** Error: ../src/wishbone_bfm.sv(28): LHS in non-blocking assignment may not be an automatic variable
-# -- Compiling module top
-# ** Error: ../src/wishbone_bfm.sv(28): LHS in non-blocking assignment may not be an automatic variable
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(78): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# End time: 12:45:22 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 2
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Error: ../src/wishbone_bfm.sv(118): Illegal declaration after the statement near line '116'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(148): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(149): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(163): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(164): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(182): near "end": syntax error, unexpected end, expecting ';'.
+# 
+# ** Error: ../src/wishbone_bfm.sv(198): Illegal declaration after the statement near line '190'.  Declarations must precede statements.  Look for stray semicolons.
+# End time: 20:05:39 on Mar 23,2015, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 3
+# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Error in macro ./compile.do line 3
+# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
 #     while executing
 # "vlog ../src/wishbone_bfm.sv"
-do Compile.do
+do compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 12:57:39 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:10:54 on Mar 23,2015
 # vlog -reportprogress 300 ../src/ram.sv 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 12:57:39 on Mar 23,2015, Elapsed time: 0:00:00
+# End time: 20:10:54 on Mar 23,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 12:57:40 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:10:54 on Mar 23,2015
 # vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(78): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(78): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 12:57:40 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:09:31 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 13:09:34 on Mar 23,2015, Elapsed time: 0:00:03
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:09:34 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Error: ../src/wishbone_bfm.sv(51): (vlog-2730) Undefined variable: 'i'.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(87): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# End time: 13:09:34 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 1
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# ** Error: ../src/wishbone_bfm.sv(118): Illegal declaration after the statement near line '116'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(150): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(151): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(165): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(166): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(184): near "end": syntax error, unexpected end, expecting ';'.
+# 
+# ** Error: ../src/wishbone_bfm.sv(200): Illegal declaration after the statement near line '192'.  Declarations must precede statements.  Look for stray semicolons.
+# End time: 20:10:55 on Mar 23,2015, Elapsed time: 0:00:01
+# Errors: 7, Warnings: 3
+# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Error in macro ./compile.do line 3
+# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
 #     while executing
 # "vlog ../src/wishbone_bfm.sv"
-do Compile.do
+do compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:10:45 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:11:19 on Mar 23,2015
 # vlog -reportprogress 300 ../src/ram.sv 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 13:10:45 on Mar 23,2015, Elapsed time: 0:00:00
+# End time: 20:11:19 on Mar 23,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:10:45 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:11:19 on Mar 23,2015
 # vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Error: ../src/wishbone_bfm.sv(52): (vlog-2730) Undefined variable: 'i'.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(88): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# End time: 13:10:45 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 1
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(148): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(149): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(163): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(164): near "=": syntax error, unexpected '=', expecting ';'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(182): near "end": syntax error, unexpected end, expecting ';'.
+# 
+# ** Error: ../src/wishbone_bfm.sv(198): Illegal declaration after the statement near line '190'.  Declarations must precede statements.  Look for stray semicolons.
+# End time: 20:11:19 on Mar 23,2015, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 5
+# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Error in macro ./compile.do line 3
+# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
 #     while executing
 # "vlog ../src/wishbone_bfm.sv"
-do Compile.do
+do compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:10:53 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:15:52 on Mar 23,2015
 # vlog -reportprogress 300 ../src/ram.sv 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 13:10:53 on Mar 23,2015, Elapsed time: 0:00:00
+# End time: 20:15:52 on Mar 23,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:10:53 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:15:52 on Mar 23,2015
 # vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(88): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(88): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 13:10:54 on Mar 23,2015, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 2
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:11:11 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 13:11:11 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:11:11 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(87): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(87): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
+# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
 # 
-# Top level modules:
-# 	top
-# End time: 13:11:11 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
+# or remove the initialization in the declaration of variable.
 # 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:18:58 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
+# ** Error: ../src/wishbone_bfm.sv(148): (vlog-2730) Undefined variable: 'addressBlock'.
 # 
-# Top level modules:
-# 	RAM
-# End time: 13:18:59 on Mar 23,2015, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:19:00 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Error: ../src/wishbone_bfm.sv(78): near "end": syntax error, unexpected end
-# ** Error: ../src/wishbone_bfm.sv(81): near "endtask": syntax error, unexpected endtask
-# ** Error: ../src/wishbone_bfm.sv(89): near "endtask": syntax error, unexpected endtask
-# ** Error: ../src/wishbone_bfm.sv(93): Illegal use of 'automatic' for variable declaration (clk).
-# ** Error: ../src/wishbone_bfm.sv(93): Illegal use of 'automatic' for variable declaration (rst).
-# ** Error: ../src/wishbone_bfm.sv(94): Illegal declaration after the statement near line '92'.  Declarations must precede statements.  Look for stray semicolons.
-# ** Error: ../src/wishbone_bfm.sv(100): Verilog Compiler exiting
-# End time: 13:19:00 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 7, Warnings: 0
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# ** Error: ../src/wishbone_bfm.sv(163): (vlog-2730) Undefined variable: 'addressBlock'.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(182): near "end": syntax error, unexpected end, expecting ';'.
+# 
+# ** Error: ../src/wishbone_bfm.sv(198): Illegal declaration after the statement near line '190'.  Declarations must precede statements.  Look for stray semicolons.
+# End time: 20:15:52 on Mar 23,2015, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 5
+# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Error in macro ./compile.do line 3
+# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
 #     while executing
 # "vlog ../src/wishbone_bfm.sv"
-do Compile.do
+do compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:28:38 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:17:31 on Mar 23,2015
 # vlog -reportprogress 300 ../src/ram.sv 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 13:28:39 on Mar 23,2015, Elapsed time: 0:00:01
+# End time: 20:17:32 on Mar 23,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:28:39 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:17:32 on Mar 23,2015
 # vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Error: ../src/wishbone_bfm.sv(69): near "bit": syntax error, unexpected bit
-# ** Error: ../src/wishbone_bfm.sv(71): (vlog-2730) Undefined variable: 'firstRun'.
-# 
-# ** Error: ../src/wishbone_bfm.sv(73): near "else": syntax error, unexpected else
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# End time: 13:28:39 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 1
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(180): near "end": syntax error, unexpected end, expecting ';'.
+# 
+# ** Error: ../src/wishbone_bfm.sv(196): Illegal declaration after the statement near line '188'.  Declarations must precede statements.  Look for stray semicolons.
+# End time: 20:17:32 on Mar 23,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 5
+# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Error in macro ./compile.do line 3
+# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
 #     while executing
 # "vlog ../src/wishbone_bfm.sv"
-do Compile.do
+do compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:30:26 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:24:47 on Mar 23,2015
 # vlog -reportprogress 300 ../src/ram.sv 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 13:30:26 on Mar 23,2015, Elapsed time: 0:00:00
+# End time: 20:24:47 on Mar 23,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:30:26 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:24:47 on Mar 23,2015
 # vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Error: ../src/wishbone_bfm.sv(69): near "int": syntax error, unexpected int
-# ** Error: ../src/wishbone_bfm.sv(71): (vlog-2730) Undefined variable: 'firstRun'.
+# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
 # 
-# ** Error: ../src/wishbone_bfm.sv(73): near "else": syntax error, unexpected else
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
 # -- Compiling interface wishbone_if
-# End time: 13:30:26 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 1
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# -- Compiling package wishbone_bfm_sv_unit
+# -- Compiling module top
+# -- Compiling program test
+# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Error: ../src/wishbone_bfm.sv(155): 'readDataBlock' is not a function name.
+# ** Error: ../src/wishbone_bfm.sv(155): Field/method name ($$) not in 'readDataBlock'
+# -- Compiling interface wishbone_if
+# End time: 20:24:47 on Mar 23,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 10
+# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Error in macro ./compile.do line 3
+# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
 #     while executing
 # "vlog ../src/wishbone_bfm.sv"
-do Compile.do
+do compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:39:50 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:25:40 on Mar 23,2015
 # vlog -reportprogress 300 ../src/ram.sv 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 13:39:50 on Mar 23,2015, Elapsed time: 0:00:00
+# End time: 20:25:40 on Mar 23,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:39:50 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:25:40 on Mar 23,2015
 # vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Error: ../src/wishbone_bfm.sv(69): near "reg": syntax error, unexpected reg
-# ** Error: ../src/wishbone_bfm.sv(71): (vlog-2730) Undefined variable: 'firstRun'.
+# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
 # 
-# ** Error: ../src/wishbone_bfm.sv(73): near "else": syntax error, unexpected else
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
 # -- Compiling interface wishbone_if
-# End time: 13:39:50 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 1
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# -- Compiling package wishbone_bfm_sv_unit
+# -- Compiling module top
+# -- Compiling program test
+# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Error: ../src/wishbone_bfm.sv(155): 'readDataBlock' is not a function name.
+# ** Error: ../src/wishbone_bfm.sv(155): Field/method name ($$) not in 'readDataBlock'
+# -- Compiling interface wishbone_if
+# End time: 20:25:40 on Mar 23,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 10
+# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Error in macro ./compile.do line 3
+# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
 #     while executing
 # "vlog ../src/wishbone_bfm.sv"
-do Compile.do
+do compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:42:14 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:26:10 on Mar 23,2015
 # vlog -reportprogress 300 ../src/ram.sv 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 13:42:15 on Mar 23,2015, Elapsed time: 0:00:01
+# End time: 20:26:10 on Mar 23,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:42:15 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:26:10 on Mar 23,2015
 # vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Error: ../src/wishbone_bfm.sv(69): near "integer": syntax error, unexpected integer
-# ** Error: ../src/wishbone_bfm.sv(71): (vlog-2730) Undefined variable: 'firstRun'.
-# 
-# ** Error: ../src/wishbone_bfm.sv(73): near "else": syntax error, unexpected else
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# End time: 13:42:15 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 1
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(180): near "end": syntax error, unexpected end, expecting ';'.
+# 
+# ** Error: ../src/wishbone_bfm.sv(196): Illegal declaration after the statement near line '188'.  Declarations must precede statements.  Look for stray semicolons.
+# End time: 20:26:11 on Mar 23,2015, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 5
+# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Error in macro ./compile.do line 3
+# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
 #     while executing
 # "vlog ../src/wishbone_bfm.sv"
-do Compile.do
+do compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:42:34 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:26:25 on Mar 23,2015
 # vlog -reportprogress 300 ../src/ram.sv 
 # -- Compiling module RAM
 # 
 # Top level modules:
 # 	RAM
-# End time: 13:42:34 on Mar 23,2015, Elapsed time: 0:00:00
+# End time: 20:26:25 on Mar 23,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:42:34 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Error: ../src/wishbone_bfm.sv(69): near "integer": syntax error, unexpected integer
-# ** Error: ../src/wishbone_bfm.sv(70): (vlog-2730) Undefined variable: 'firstRun'.
-# 
-# ** Error: ../src/wishbone_bfm.sv(74): near "else": syntax error, unexpected else
-# ** Warning: ../src/wishbone_bfm.sv(114): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# End time: 13:42:34 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 1
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:43:22 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 13:43:22 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:43:22 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Error: ../src/wishbone_bfm.sv(74): near "else": syntax error, unexpected else
-# ** Error: ../src/wishbone_bfm.sv(88): near "endtask": syntax error, unexpected endtask
-# ** Error: ../src/wishbone_bfm.sv(96): near "endtask": syntax error, unexpected endtask
-# ** Error: ../src/wishbone_bfm.sv(100): Illegal use of 'automatic' for variable declaration (clk).
-# ** Error: ../src/wishbone_bfm.sv(100): Illegal use of 'automatic' for variable declaration (rst).
-# ** Error: ../src/wishbone_bfm.sv(101): Illegal declaration after the statement near line '99'.  Declarations must precede statements.  Look for stray semicolons.
-# ** Error: ../src/wishbone_bfm.sv(107): Verilog Compiler exiting
-# End time: 13:43:22 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 7, Warnings: 0
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:48:30 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 13:48:30 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:48:30 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(107): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(107): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 13:48:30 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:50:03 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 13:50:03 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 13:50:03 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(107): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(107): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 13:50:04 on Mar 23,2015, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 2
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 14:49:54 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 14:49:55 on Mar 23,2015, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 14:49:55 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Error: ../src/wishbone_bfm.sv(78): near "end": syntax error, unexpected end
-# ** Error: ../src/wishbone_bfm.sv(82): near "endtask": syntax error, unexpected endtask
-# ** Error: ../src/wishbone_bfm.sv(90): near "endtask": syntax error, unexpected endtask
-# ** Error: ../src/wishbone_bfm.sv(94): Illegal use of 'automatic' for variable declaration (clk).
-# ** Error: ../src/wishbone_bfm.sv(94): Illegal use of 'automatic' for variable declaration (rst).
-# ** Error: ../src/wishbone_bfm.sv(95): Illegal declaration after the statement near line '93'.  Declarations must precede statements.  Look for stray semicolons.
-# ** Error: ../src/wishbone_bfm.sv(101): Verilog Compiler exiting
-# End time: 14:49:55 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 7, Warnings: 0
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 14:50:16 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 14:50:16 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 14:50:16 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(108): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(108): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 14:50:16 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 14:50:29 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 14:50:29 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 14:50:29 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(108): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(108): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 14:50:29 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 14:50:39 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 14:50:39 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 14:50:39 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(107): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(107): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 14:50:40 on Mar 23,2015, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 2
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 14:57:33 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 14:57:33 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 14:57:33 on Mar 23,2015
+# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 20:26:25 on Mar 23,2015
 # vlog -reportprogress 300 ../src/wishbone_bfm.sv 
 # ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
@@ -625,88 +462,19 @@ do Compile.do
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 14:57:33 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:59:47 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 15:59:47 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 15:59:47 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# ** Error: ../src/wishbone_bfm.sv(119): Illegal declaration after the statement near line '113'.  Declarations must precede statements.  Look for stray semicolons.
-# -- Compiling interface wishbone_if
-# End time: 15:59:47 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 3
-# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./Compile.do line 3
-# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 16:09:39 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 16:09:39 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 16:09:39 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(111): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(111): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
@@ -714,306 +482,38 @@ do Compile.do
 # 
 # Top level modules:
 # 	top
-# End time: 16:09:39 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 6
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 18:29:42 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 18:29:42 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 18:29:42 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(111): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(111): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 18:29:43 on Mar 23,2015, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 6
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 18:44:34 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 18:44:34 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 18:44:34 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(109): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(110): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(109): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(110): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 18:44:34 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 6
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 18:47:50 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 18:47:50 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 18:47:50 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(109): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(110): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(109): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(110): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 18:47:50 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 6
-sim
-# wrong # args: should be "sim_image option ?arg arg ...?"
-svsim
-# invalid command name "svsim"
-help
-# Type help <command> to get information on that command, or try one of the following:
-#   commands  List all available commands and topics.
-#   Debugging Lists debugging commands.
-#   Execution Information on controlling execution of the simulation.
-#   Tcl       Information on Tcl commands.
-#   Tk        Information on Tk commands.
-#   incrTcl   Information on incrTcl commands.
-# 
-commands
-# invalid command name "commands"
-help commands
-# Help avaliable on the following topics and commands:
-# 	abort	add	add_cmdhelp	add_menurb
-# 	addTime	after	alias	append	apply_button_adder
-# 	array	batch_mode	bd	bedit	bell
-# 	bgerror	binary	bind	bindtags	body
-# 	bp	break	button	call	canvas
-# 	catch	cd	change	check	checkbutton
-# 	class	clipboard	clock	close	code
-# 	concat	config	configure	cont	continue
-# 	dde	Debugging	debugging	delete	describe
-# 	destroy	disablebp	divTime	do	drivers
-# 	dumplog64	echo	edit	elite_edition
-# 	enablebp	encoding	ensemble	entry	env
-# 	environment	environment_nosource	eof
-# 	eqTime	error	eval	event	exa
-# 	examine	exec	execution	exit	expr
-# 	fblocked	fconfigure	fcopy	file	fileevent
-# 	find	findExec	flush	focus	font
-# 	for	force	foreach	format	formatTime
-# 	frame	get_menu_path	gets	ginfo
-# 	glob	global	grab	grid	gteTime
-# 	gtTime	help	history	http	if
-# 	image	incr	incrTcl	info	int64ToReal
-# 	int64ToStr	interp	intToTime	join	label
-# 	lappend	layout	lindex	linsert	list
-# 	listbox	llength	load	local	log
-# 	lower	lrange	lremove	lreplace	lsearch
-# 	lset	lshift	lsort	lsublist	lteTime
-# 	ltTime	luniq	max	menu	menubutton
-# 	message	modelsim	msgcat	mulTime	namespace
-# 	namespaceOf	neqTime	noforce	nolog
-# 	notepad	notrace	noview	nowhen	onbreak
-# 	onElabError	onerror	onfinish	open
-# 	openlog	option	pack	package	panedwindow
-# 	parray	pathOf	pause	pedit	personal_edition
-# 	pid	place	precision	PrefSource	PrefSource(geometry)
-# 	PrefSource(HDLFileTypes)	PrefSource(HighlightErrorColor)	PrefSource(highlightExecutableLines)
-# 	PrefSource(tabs)	PrefSource(user_hook)	PrefSource(verilogFileTypes)
-# 	PrefSource(vhdlFileTypes)	PrefSource(WarnSourceChanged)	printenv
-# 	proc	project	property	puterr	puts
-# 	pwd	qhdel	qhdir	qhlib	quietly
-# 	quit	qvhcom	qvlcom	radiobutton
-# 	radix	raise	read	readers	RealToTime
-# 	regexp	registry	regsub	rename	renamelog
-# 	report	restart	resume	return	rincr
-# 	run	runStatus	sbrk	scale	scaleTime
-# 	scan	scope	scrollbar	searchlog	see
-# 	seek	selection	send	set	setenv
-# 	shift	Show	show	simNamespaceIsOpen
-# 	simstats	simstatslist	simtime	slave_mode
-# 	socket	source	spinbox	split	status
-# 	step	stop	string	subst	subTime
-# 	suppress	switch	tabset	tb	Tcl
-# 	tcl_endOfWord	tcl_findLibrary	tcl_startOfNextWord
-# 	tcl_startOfPreviousWord	tcl_wordBreakAfter	tcl_wordBreakBefore
-# 	tell	text	time	tix	Tk
-# 	tk	tk_chooseColor	tk_chooseDirectory
-# 	tk_dialog	tk_getOpenFile	tk_getSaveFile
-# 	tk_menuSetFocus	tk_messageBox	tk_popup
-# 	tk_textCopy	tk_textCut	tk_textPaste
-# 	tkwait	toggle	toplevel	trace	transcript
-# 	truncate	tssi2mti	ui_VVMode	unknown	unset
-# 	unsetenv	update	uplevel	upvar	usual
-# 	validTime	variable	vcd	vcd2wlf	vcom
-# 	vdel	vdir	vencrypt	verror	vgencomp
-# 	vhencrypt	view	virtual	vlib	vlog
-# 	vmake	vmap	vsim	vsim_break	vsimAuth
-# 	vsimDate	vsimId	vsimVersion	vsimVersionString
-# 	vsource	vwait	when	where	while
-# 	winfo	wlf2log	wlf2vcd	wlfman	wlfrecover
-# 	wm	write
-# 
-do Compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 18:58:33 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 18:58:33 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
-# Start time: 18:58:33 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(109): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(110): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(109): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(110): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 18:58:33 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 6
-do Sim.do
+# End time: 20:26:25 on Mar 23,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 10
+do sim.do
+# //  ModelSim PE Student Edition 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# // NOT FOR CORPORATE OR PRODUCTION USE.
+# // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
+# // FOR HIGHER EDUCATION PURPOSES ONLY
+# //
 # vsim -gui 
-# Start time: 18:58:38 on Mar 23,2015
+# Start time: 20:26:52 on Mar 23,2015
 # Loading sv_std.std
 # Loading work.wishbone_bfm_sv_unit
 # Loading work.top
 # Loading work.wishbone_if
 # Loading work.RAM
 # ** Fatal: (vsim-3904) SystemVerilog Program Blocks are not supported in Modelsim PE.
-#    Time: 0 ps  Iteration: 0  Instance: /top File: ../src/wishbone_bfm.sv
+#    Time: 0 ns  Iteration: 0  Instance: /top File: ../src/wishbone_bfm.sv
 # FATAL ERROR while loading design
 # Error loading design
 # Error: Error loading design
 #        Pausing macro execution
-# MACRO ./Sim.do PAUSED at line 1
-# End time: 19:09:18 on Mar 23,2015, Elapsed time: 0:10:40
-# Errors: 1, Warnings: 0
+# MACRO ./sim.do PAUSED at line 1

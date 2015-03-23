@@ -49,7 +49,7 @@ class wishbone_bfm #(parameter int gDataWidth = 32, parameter int gAddrWidth = 8
 	virtual task blockRead(input logic [gAddrWidth-1:0] addr, ref logic [gDataWidth-1:0] data[]);
 		$display("blockRead @%0tns", $time);
 		for (int i = 0; i < $size(data); i = i + 1) begin
-			sigs.cb.adr <= addr;
+			sigs.cb.adr <= addr + i;
 			sigs.cb.we <= 0;
 			sigs.cb.sel <= '1;
 			sigs.cb.cyc <= 1;
@@ -67,7 +67,7 @@ class wishbone_bfm #(parameter int gDataWidth = 32, parameter int gAddrWidth = 8
 	virtual task blockWrite(input logic [gAddrWidth-1:0] addr, const ref logic [gDataWidth-1:0] data[]);
 		$display("blockWrite @%0tns", $time);
 		for (int i = 0; i < $size(data); i = i + 1) begin
-			sigs.cb.adr <= addr;
+			sigs.cb.adr <= addr + i;
 			sigs.cb.datM <= data;
 			sigs.cb.we <= 1;
 			sigs.cb.sel <= '1;
@@ -105,19 +105,76 @@ program test #(parameter int gDataWidth = 32, parameter int gAddrWidth = 8)(wish
 	initial begin : stimuli
 		wishbone_bfm#(gDataWidth, gAddrWidth) bfm = new(wb);
 		
+		const integer gEndAddress = (2**gAddrWidth)-1;
+		const logic [gDataWidth-1:0] testInput1 = 32'hAAAAAAAA;
+		const logic [gDataWidth-1:0] testInput2 = 32'h55555555;
 		
 		logic [gAddrWidth-1:0] addr = '1;
 		logic [gDataWidth-1:0] data = '0;	
 
+		logic [gDataWidth-1:0] dataBlock[] = new [gEndAddress];
+		logic [gDataWidth-1:0] readDataBlock[] = new [gEndAddress];
+		
 		// generate reset -----------------------------------------------------
 		rst = 0;
 		#10 rst = 1;
 		#20 rst = 0;
 
-		// stimuli ------------------------------------------------------------
-		singleWrite(addr, '1);
-		singleRead(addr, data);
-		$display("data: %b", data);
+		// stimuli ------------------------------------------------------------		
+		//test Single Read Write with data 10101...
+		for (integer i=0; i<gEndAddress; i++) begin
+			addr = i;
+			singleWrite(addr, testInput1);
+			SingleRead(addr, data);
+		
+			assert (data == testInput1)
+				else $error("SingleTest: TestInput1 is wrong" );
+		end
+		
+		
+		//test Single Read Write with data 010101...
+		for (integer i=0; i<gEndAddress; i++) begin
+			addr = i;
+			singleWrite(addr, testInput2);
+			SingleRead(addr, data);
+		
+			assert (data == testInput2)
+				else $error("SingleTest: TestInput2 is wrong" );
+		end
+		
+		
+		//test Block Read Write with data 1010101...
+		for (integer i=0; i<gEndAddress; i++) begin			
+			dataBlock[i]	= testInput1;
+		end;
+		
+		BlockWrite(0, dataBlock);		
+		BlockRead(0, readDataBlock);
+			
+		for (integer i=0; i<gEndAddress; i++) begin
+			assert (readDataBlock[i] == testInput1)
+				else $error("BlockTest: TestInput1 is wrong");		
+		end;
+		
+		
+		//test Block Read Write with data 01010101...
+		for (integer i=0; i<gEndAddress; i++) begin
+			dataBlock[i]	= testInput2;
+		end;
+		
+		BlockWrite(0, dataBlock);		
+		BlockRead(0, readDataBlock);
+			
+		for (integer i=0; i<gEndAddress; i++) begin
+			assert (readDataBlock[i] == testInput2)
+				else $error("BlockTest: TestInput2 is wrong");		
+		end;
+		
+		//control test
+		assert (readDataBlock[0] == testInput1)
+			else $error("ControlTest: This test is supposed to be wrong");		
+		
+		$stop;		
 		
 	end : stimuli
 endprogram
