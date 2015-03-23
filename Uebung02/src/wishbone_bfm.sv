@@ -16,37 +16,67 @@ class wishbone_bfm #(parameter int gDataWidth = 32, parameter int gAddrWidth = 8
 
 	virtual task singleRead(input logic [gAddrWidth-1:0] addr, output logic [gDataWidth-1:0] data);
 		$display("singleRead @%0tns", $time);
-		// clock edge 0
-		@sigs.cb
 		sigs.cb.adr <= addr;
 		sigs.cb.we <= 0;
 		sigs.cb.sel <= '1;
 		sigs.cb.cyc <= 1;
 		sigs.cb.stb <= 1;
 		
-		// @(posedge sigs.cb.ack)
-		// data <= 
+		@(posedge sigs.cb.ack)
+		data = sigs.cb.datS;
+		sigs.cb.stb = 0;
+		sigs.cb.cyc = 0;		
 	endtask
 
 	// ------------------------------------------------------------------------
 
 	virtual task singleWrite(input logic [gAddrWidth-1:0] addr, logic [gDataWidth-1:0] data);
 		$display("singleWrite @%0tns", $time);
-		// ...
+		sigs.cb.adr <= addr;
+		sigs.cb.datM <= data;
+		sigs.cb.we <= 1;
+		sigs.cb.sel <= '1;
+		sigs.cb.cyc <= 1;
+		sigs.cb.stb <= 1;
+		
+		@(posedge sigs.cb.ack)
+		sigs.cb.stb = 0;
+		sigs.cb.cyc = 0;	
 	endtask
 
 	// ------------------------------------------------------------------------
 
 	virtual task blockRead(input logic [gAddrWidth-1:0] addr, ref logic [gDataWidth-1:0] data[]);
 		$display("blockRead @%0tns", $time);
-		// ...
+		for (int i = 0; i < $size(data); i = i + 1) begin
+			sigs.cb.adr <= addr;
+			sigs.cb.we <= 0;
+			sigs.cb.sel <= '1;
+			sigs.cb.cyc <= 1;
+			sigs.cb.stb <= 1;
+			
+			@(posedge sigs.cb.ack)
+			data = sigs.cb.datS;
+		end
+		sigs.cb.stb = 0;
+		sigs.cb.cyc = 0;
 	endtask
 
 	// ------------------------------------------------------------------------
 
 	virtual task blockWrite(input logic [gAddrWidth-1:0] addr, const ref logic [gDataWidth-1:0] data[]);
 		$display("blockWrite @%0tns", $time);
-		// ...
+		for (int i = 0; i < $size(data); i = i + 1) begin
+			sigs.cb.adr <= addr;
+			sigs.cb.datM <= data;
+			sigs.cb.we <= 1;
+			sigs.cb.sel <= '1;
+			sigs.cb.cyc <= 1;
+			sigs.cb.stb <= 1;
+			@(posedge sigs.cb.ack);
+		end
+		sigs.cb.stb = 0;
+		sigs.cb.cyc = 0;
 	endtask
 
 	// ------------------------------------------------------------------------
@@ -75,15 +105,19 @@ program test #(parameter int gDataWidth = 32, parameter int gAddrWidth = 8)(wish
 	initial begin : stimuli
 		wishbone_bfm#(gDataWidth, gAddrWidth) bfm = new(wb);
 		
+		
+		logic [gAddrWidth-1:0] addr = '1;
+		logic [gDataWidth-1:0] data = '0;	
+
 		// generate reset -----------------------------------------------------
-		// ...
+		rst = 0;
+		#10 rst = 1;
+		#20 rst = 0;
 
 		// stimuli ------------------------------------------------------------
-		// ...
-		
-		// siehe VL
-		// bus.cb.adr <= 0; // bus.adr <= 0; is wrong!
-		// @bus.cb; // wait for a clock event
+		singleWrite(addr, '1);
+		singleRead(addr, data);
+		$display("data: %b", data);
 		
 	end : stimuli
 endprogram
