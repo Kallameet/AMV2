@@ -64,13 +64,14 @@ title=\lstname %zeigt titel der datei an
 \section{Beantwortung der Fragen}
 
 \begin{itemize}
-	\item Die VHDL-Anweisung \texttt{wait until} pausiert einen Prozess so lange bis sich eines der Signale im Statement ändert die gegebene Bedingung erfüllt ist. 
-	Das heißt bei \texttt{wait until clk\_i = '1'} wird auf die steigende Flanke von \texttt{clk\_i} gewartet. Wenn \texttt{clk\_i} bereits \texttt{'1'} ist wird so lange gewartet bis wieder eine steigende Flanke kommt.
-	\item Bei dieser VHDL-Anweisung wird so lange gewartet bis \texttt{ack\_i} während einer Änderung von \texttt{clk\_i '1'} ist.
-	\item Das RAM könnte sonst nicht verbunden werden. In VHDL werden Signals verwendet um Parallelität zu modellieren.
+	\item \texttt{bit} ist zweiwertig und \texttt{logic} ist vierwertig. \texttt{bit} braucht weniger Speicher und \texttt{logic} ist realer.
+	\item Packed vs Unpacked
+		\begin{itemize}
+			\item Packed Arrays sind wie Vektoren in VHDL und haben eine festgelegte Darstellung als Bit-Strom. Beispiel: \texttt{bit [7:0] inputByte}
+			\item Unpacked Arrays sind wie Arrays in C, das heißt das Werkzeug kann die Abbildung frei wählen. Beispiel: \texttt{bit inputByte [7:0]}
+		\end{itemize}
 \end{itemize}
 
-Quelle: \url{http://www.ics.uci.edu/~jmoorkan/vhdlref}
 
 \section{Testfälle}
 Es wurden die unten aufgelisteten Funktionen der BFM getestet. Dazu wurde der gesamte Speicherbereich des RAM zweimal geschrieben und gelesen. Beim ersten Mal waren auf der Datenleitung alle geraden Bit 1 und ungeraden Bit 0. Beim zweiten Mal wurde der Wert invertiert. 
@@ -89,8 +90,7 @@ Getestet wurde lokal am Rechner mit Questasim, da der Applicationserver bei beid
 
 \section{Source Code}
 
-\lstinputlisting[language={VHDL}]{\srcpath/WishboneBFM-p.vhd}
-\lstinputlisting[language={VHDL}]{\srcpath/WishboneBFM-tb.vhd}
+\lstinputlisting[language={verilog}]{\srcpath/wishbone_bfm.sv}
 
 \lstinputlisting[language={tcl}]{\simpath/Compile.do}
 \lstinputlisting[language={tcl}]{\simpath/Sim.do}
