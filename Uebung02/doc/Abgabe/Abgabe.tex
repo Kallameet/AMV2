@@ -76,16 +76,15 @@ title=\lstname %zeigt titel der datei an
 \section{Testfälle}
 Es wurden die unten aufgelisteten Funktionen der BFM getestet. Dazu wurde der gesamte Speicherbereich des RAM zweimal geschrieben und gelesen. Beim ersten Mal waren auf der Datenleitung alle geraden Bit 1 und ungeraden Bit 0. Beim zweiten Mal wurde der Wert invertiert. 
 \\
-Zusätzlich gibt es noch einen Idle Test der überprüft ob alle Signale auf 'Z' gesetzt sind und einen Test der zur Kontrolle fehlschlagen soll.
+Zusätzlich gibt es noch einen Test der zur Kontrolle fehlschlagen soll.
 \\
-Getestet wurde lokal am Rechner mit Questasim, da der Applicationserver bei beiden Gruppenmitgliedern nicht funktionierte.
+Getestet und simuliert wurde auf dem Applicationserver.
 
 \begin{itemize}
 	\item SingleRead
 	\item SingleWrite
 	\item BlockRead
 	\item BlockWrite
-	\item Idle
 \end{itemize}
 
 \section{Source Code}
