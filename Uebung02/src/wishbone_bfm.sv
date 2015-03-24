@@ -109,19 +109,37 @@ module top;
         test TheTest(wb.master, rst);
 endmodule
  
+class rnd_values #(parameter int gDataWidth = 32, parameter int gAddrWidth = 8);
+  randc logic [gAddrWidth-1:0] addr;
+  randc logic [gDataWidth-1:0] data; 
+endclass
+
+class rnd_values_block #(parameter int gDataWidth = 32, parameter int gAddrWidth = 8);
+  randc logic [gAddrWidth-1:0] addr;
+  randc logic [gDataWidth-1:0] dataBlock [];
+  function new (integer gBlockSize);
+    dataBlock = new[gBlockSize];
+  endfunction
+endclass
+ 
 program test #(parameter int gDataWidth = 32, parameter int gAddrWidth = 8)(wishbone_if.master wb, output logic rst);
         initial begin : stimuli
                 wishbone_bfm#(gDataWidth, gAddrWidth) bfm = new(wb);
+                rnd_values#(gDataWidth, gAddrWidth) rndValues = new();
+                const integer cBlockSize = 10;
+                rnd_values_block#(gDataWidth, gAddrWidth) rndValuesBlock = new(cBlockSize);
                
                 const integer gEndAddress = (2**gAddrWidth)-1;
                 const logic [gDataWidth-1:0] testInput1 = 32'hAAAAAAAA;
                 const logic [gDataWidth-1:0] testInput2 = 32'h55555555;
+                const integer cNumRandTests = 2000;
                
                 logic [gAddrWidth-1:0] addr = '1;
                 logic [gDataWidth-1:0] data = '0;      
  
                 logic [gDataWidth-1:0] dataBlock[] = new [gEndAddress];
                 logic [gDataWidth-1:0] readDataBlock[] = new [gEndAddress];
+                logic [gDataWidth-1:0] rndDataBlock[] = new [cBlockSize];
                
                 // generate reset -----------------------------------------------------
                 rst = 0;
@@ -182,6 +200,33 @@ program test #(parameter int gDataWidth = 32, parameter int gAddrWidth = 8)(wish
                 assert (readDataBlock[0] == testInput1)
                         else $error("ControlTest: This test is supposed to be wrong");         
                
+                
+                //random test singleWrite and singleRead
+                for (integer i=0; i<gEndAddress; i++) begin
+                  if(rndValues.randomize())
+                    begin
+                      bfm.singleWrite(rndValues.addr, rndValues.data);
+                      bfm.singleRead(rndValues.addr, data);
+                      assert (data == rndValues.data)
+                        else $error("RandomTestSingle: Value is wrong" );
+                    end
+                  else
+                    $display("Error in randomize");
+                end
+               
+                //random test blockWrite and blockRead
+                for (integer i=0; i<cNumRandTests; i++) begin
+                  if(rndValuesBlock.randomize())
+                    begin
+                      bfm.blockWrite(rndValuesBlock.addr, rndValuesBlock.dataBlock);
+                      bfm.blockRead(rndValuesBlock.addr, rndDataBlock);
+                      assert (rndDataBlock == rndValuesBlock.dataBlock)
+                        else $error("RandomTestBlock: Value is wrong" );
+                    end
+                  else
+                    $display("Error in randomize().");
+                end
+
                 $stop;         
                
         end : stimuli
