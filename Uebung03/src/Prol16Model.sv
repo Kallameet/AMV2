@@ -12,29 +12,176 @@ class Prol16Model;
 		state.reset();
 	endtask
 	
+	task calcCarryFlag(int data);
+		if (data > (2**$size(pkgProl16::data_v) - 1) || data < 0) 
+			state.cFlag = 1;
+		else
+			state.cFlag = 0;
+	endtask
+	
+	task calcZeroFlag(pkgProl16::data_v data);
+		if (data == '0)
+			state.zFlag = 1;
+		else
+			state.zFlag = 0;
+	endtask
+	
 	task execute(Prol16Opcode opcode);
+		int data = 0;	// tmp data for carry calc
+		
+		// inc pc here, overwrite in jumps
+		state.pc++;
+	
 		case (opcode.cmd)
-			Nop: $display("Opcode: %s", opcode.cmd);
-			Loadi: $display("Opcode: %s", opcode.cmd);
-			Jump: $display("Opcode: %s", opcode.cmd);
-			Jumpc: $display("Opcode: %s", opcode.cmd);
-			Jumpz: $display("Opcode: %s", opcode.cmd);
-			Move: $display("Opcode: %s", opcode.cmd);
-			And: $display("Opcode: %s", opcode.cmd);
-			Or: $display("Opcode: %s", opcode.cmd);
-			Xor: $display("Opcode: %s", opcode.cmd);
-			Not: $display("Opcode: %s", opcode.cmd);
-			Add: $display("Opcode: %s", opcode.cmd);
-			Addc: $display("Opcode: %s", opcode.cmd);
-			Sub: $display("Opcode: %s", opcode.cmd);
-			Subc: $display("Opcode: %s", opcode.cmd);
-			Comp: $display("Opcode: %s", opcode.cmd);
-			Inc: $display("Opcode: %s", opcode.cmd);
-			Dec: $display("Opcode: %s", opcode.cmd);
-			Shl: $display("Opcode: %s", opcode.cmd);
-			Shr: $display("Opcode: %s", opcode.cmd);
-			Shlc: $display("Opcode: %s", opcode.cmd);
-			Shrc: $display("Opcode: %s", opcode.cmd);
+			Nop:
+			begin
+			end
+			
+			Loadi:
+			begin
+				state.regs[opcode.ra] = opcode.data;
+				state.pc++;	// TODO: necessary?
+			end
+			
+			Jump: 
+			begin
+				state.pc = state.regs[opcode.ra];
+			end
+			
+			Jumpc:
+			begin
+				if (state.cFlag == 1) 
+					state.pc = state.regs[opcode.ra];
+			end
+			
+			Jumpz:
+			begin
+				if (state.zFlag == 1)
+					state.pc = state.regs[opcode.ra];
+			end
+			
+			Move:
+			begin
+				state.regs[opcode.ra] = state.regs[opcode.rb];
+			end
+			
+			And:
+			begin
+				state.regs[opcode.ra] = state.regs[opcode.ra] & state.regs[opcode.rb];
+				state.cFlag = 0;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Or:
+			begin
+				state.regs[opcode.ra] = state.regs[opcode.ra] | state.regs[opcode.rb];
+				state.cFlag = 0;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Xor:
+			begin
+				state.regs[opcode.ra] = state.regs[opcode.ra] ^ state.regs[opcode.rb];
+				state.cFlag = 0;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Not:
+			begin
+				state.regs[opcode.ra] = ~ state.regs[opcode.ra];
+				state.cFlag = 0;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Add:
+			begin
+				data = state.regs[opcode.ra] + state.regs[opcode.rb];
+				calcCarryFlag(data);
+				state.regs[opcode.ra] = data;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Addc:
+			begin
+				data = state.regs[opcode.ra] + state.regs[opcode.rb] + state.cFlag;
+				calcCarryFlag(data);
+				state.regs[opcode.ra] = data;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Sub:
+			begin
+				data = state.regs[opcode.ra] - state.regs[opcode.rb];
+				calcCarryFlag(data);
+				state.regs[opcode.ra] = data;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Subc:
+			begin
+				data = state.regs[opcode.ra] - state.regs[opcode.rb] - state.cFlag;
+				calcCarryFlag(data);
+				state.regs[opcode.ra] = data;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Comp:
+			begin
+				data = state.regs[opcode.ra] - state.regs[opcode.rb];
+				calcCarryFlag(data);
+				calcZeroFlag(data);
+			end
+			
+			Inc:
+			begin
+				data = state.regs[opcode.ra] + 1;
+				calcCarryFlag(data);
+				state.regs[opcode.ra] = data;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+				
+			Dec:
+			begin
+				data = state.regs[opcode.ra] - 1;
+				calcCarryFlag(data);
+				state.regs[opcode.ra] = data;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Shl:
+			begin
+				data = state.regs[opcode.ra] << 1;
+				calcCarryFlag(data);
+				state.regs[opcode.ra] = data;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Shr:
+			begin
+				data = state.regs[opcode.ra] >> 1;
+				calcCarryFlag(data);
+				state.regs[opcode.ra] = data;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Shlc:
+			begin
+				data = state.regs[opcode.ra] << 1;
+				data[0] = state.cFlag;
+				calcCarryFlag(data);
+				state.regs[opcode.ra] = data;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
+			Shrc:
+			begin
+				data = state.regs[opcode.ra] >> 1;
+				data[$size(pkgProl16::data_v) - 1] = state.cFlag;
+				calcCarryFlag(data);
+				state.regs[opcode.ra] = data;
+				calcZeroFlag(state.regs[opcode.ra]);
+			end
+			
 			default : $display("Wrong opcode: doing nop");
 		endcase
 	endtask
