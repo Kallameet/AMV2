@@ -20,5 +20,6 @@ typedef enum
 		Shl,
 		Shr,
 		Shlc,
-		Shrc		
+		Shrc,
+		Invalid
 	} Prol16Command;
