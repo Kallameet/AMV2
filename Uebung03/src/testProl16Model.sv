@@ -58,6 +58,8 @@ program testProl16Model();
 		Prol16Opcode opcode_Shr = new(22, 23, Shr, 0);
 		Prol16Opcode opcode_Shlc = new(24, 25, Shlc, 0);
 		Prol16Opcode opcode_Shrc = new(26, 27, Shrc, 0);
+		Prol16Opcode opcode_Invalid = new(28, 29, Invalid, 0);
+		Prol16Opcode opcode_InvalidRegister = new(31, 32, Move, 0);
 	
 		//Reset
 		model.reset();
@@ -304,6 +306,18 @@ program testProl16Model();
 		model.state.cFlag = 0;
 		model.execute(opcode_Shrc);
 		testClass.assertWithFlags(0, 71, 1, 1, model.state, 26, "Shrc test 4");
+				
+		//Invalid
+		model.state.regs[28] = 123;
+		model.state.cFlag = 0;
+		model.state.zFlag = 0;
+		model.execute(opcode_Invalid);
+		testClass.assertWithFlags(123, 72, 0, 0, model.state, 28, "Invalid test");
+		
+		//InvalidRegister
+		model.state.regs[31] = 1234;
+		model.execute(opcode_InvalidRegister);
+		testClass.assertWithFlags(1234, 73, 0, 0, model.state, 31, "Invalid register test");
 		
 		$stop;
 	end : stimuli
