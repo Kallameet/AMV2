@@ -2124,3 +2124,5 @@ do Sim.do
 # Error: Error loading design
 #        Pausing macro execution
 # MACRO ./Sim.do PAUSED at line 1
+# End time: 14:20:54 on Apr 06,2015, Elapsed time: 0:14:42
+# Errors: 1, Warnings: 0
