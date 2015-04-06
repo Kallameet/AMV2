@@ -5,7 +5,12 @@ class Prol16State #(parameter int gRegs = 32);
 	bit zFlag;
 	
 	function new();
-		reset();
+		for (int i = 0; i < gRegs; i++) begin
+			regs[i] = '0;
+		end
+		programCounter = 0;
+		cFlag = 0;
+		zFlag = 0;
 	endfunction
 	
 	task reset();
