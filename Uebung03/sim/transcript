@@ -1,586 +1,2126 @@
-# Reading E:/Programme/Modeltech_pe_edu_10.4/tcl/vsim/pref.tcl
-do compile.do
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:05:38 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
+# Reading C:/altera/14.1/modelsim_ase/tcl/vsim/pref.tcl
+do Compile.do
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:25:09 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
 # 
 # Top level modules:
-# 	RAM
-# End time: 20:05:39 on Mar 23,2015, Elapsed time: 0:00:01
+# 	--none--
+# End time: 12:25:09 on Apr 06,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:05:39 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Error: ../src/wishbone_bfm.sv(118): Illegal declaration after the statement near line '116'.  Declarations must precede statements.  Look for stray semicolons.
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(148): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(149): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(163): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(164): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(182): near "end": syntax error, unexpected end, expecting ';'.
-# 
-# ** Error: ../src/wishbone_bfm.sv(198): Illegal declaration after the statement near line '190'.  Declarations must precede statements.  Look for stray semicolons.
-# End time: 20:05:39 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 7, Warnings: 3
-# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-# Error in macro ./compile.do line 3
-# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:25:09 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# ** Error: ../src/Prol16Opcode.sv(4): Invalid type 'Prol16Command'. Please check the type of the variable 'cmd'.
+# ** Error: ../src/Prol16Opcode.sv(5): Invalid type 'data_v'. Please check the type of the variable 'data'.
+# End time: 12:25:09 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 3
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
 #     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do compile.do
+# "vlog ../src/Prol16Opcode.sv"
+do Compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:10:54 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:29:09 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
 # 
 # Top level modules:
-# 	RAM
-# End time: 20:10:54 on Mar 23,2015, Elapsed time: 0:00:00
+# 	--none--
+# End time: 12:29:09 on Apr 06,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:10:54 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Error: ../src/wishbone_bfm.sv(118): Illegal declaration after the statement near line '116'.  Declarations must precede statements.  Look for stray semicolons.
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(150): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(151): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(165): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(166): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(184): near "end": syntax error, unexpected end, expecting ';'.
-# 
-# ** Error: ../src/wishbone_bfm.sv(200): Illegal declaration after the statement near line '192'.  Declarations must precede statements.  Look for stray semicolons.
-# End time: 20:10:55 on Mar 23,2015, Elapsed time: 0:00:01
-# Errors: 7, Warnings: 3
-# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-# Error in macro ./compile.do line 3
-# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:29:09 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# ** Error: ../src/Prol16Opcode.sv(7): Invalid type 'data_v'. Please check the type of the variable 'data'.
+# End time: 12:29:09 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 3
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
 #     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do compile.do
+# "vlog ../src/Prol16Opcode.sv"
+do Compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:11:19 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:35:00 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
 # 
 # Top level modules:
-# 	RAM
-# End time: 20:11:19 on Mar 23,2015, Elapsed time: 0:00:00
+# 	--none--
+# End time: 12:35:00 on Apr 06,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:11:19 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(148): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(149): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(163): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(164): near "=": syntax error, unexpected '=', expecting ';'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(182): near "end": syntax error, unexpected end, expecting ';'.
-# 
-# ** Error: ../src/wishbone_bfm.sv(198): Illegal declaration after the statement near line '190'.  Declarations must precede statements.  Look for stray semicolons.
-# End time: 20:11:19 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 6, Warnings: 5
-# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-# Error in macro ./compile.do line 3
-# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:35:00 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# ** Error: ../src/Prol16Opcode.sv(2): near ";": syntax error, unexpected ';', expecting ::
+# ** Error: ../src/Prol16Opcode.sv(6): Invalid type 'Prol16Command'. Please check the type of the variable 'cmd'.
+# ** Error: ../src/Prol16Opcode.sv(7): Invalid type 'data_v'. Please check the type of the variable 'data'.
+# End time: 12:35:00 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 3
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
 #     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do compile.do
+# "vlog ../src/Prol16Opcode.sv"
+do Compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:15:52 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:36:04 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
 # 
 # Top level modules:
-# 	RAM
-# End time: 20:15:52 on Mar 23,2015, Elapsed time: 0:00:00
+# 	--none--
+# End time: 12:36:04 on Apr 06,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:15:52 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Error: ../src/wishbone_bfm.sv(148): (vlog-2730) Undefined variable: 'addressBlock'.
-# 
-# ** Error: ../src/wishbone_bfm.sv(163): (vlog-2730) Undefined variable: 'addressBlock'.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(182): near "end": syntax error, unexpected end, expecting ';'.
-# 
-# ** Error: ../src/wishbone_bfm.sv(198): Illegal declaration after the statement near line '190'.  Declarations must precede statements.  Look for stray semicolons.
-# End time: 20:15:52 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 5
-# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-# Error in macro ./compile.do line 3
-# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:36:04 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# ** Error: ../src/Prol16Opcode.sv(8): Invalid type 'data_v'. Please check the type of the variable 'data'.
+# End time: 12:36:04 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 3
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
 #     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do compile.do
+# "vlog ../src/Prol16Opcode.sv"
+do Compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:17:31 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:37:05 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
 # 
 # Top level modules:
-# 	RAM
-# End time: 20:17:32 on Mar 23,2015, Elapsed time: 0:00:01
+# 	--none--
+# End time: 12:37:05 on Apr 06,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:17:32 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(180): near "end": syntax error, unexpected end, expecting ';'.
-# 
-# ** Error: ../src/wishbone_bfm.sv(196): Illegal declaration after the statement near line '188'.  Declarations must precede statements.  Look for stray semicolons.
-# End time: 20:17:32 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 5
-# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-# Error in macro ./compile.do line 3
-# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:37:05 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# ** Error: ../src/Prol16Opcode.sv(3): Range must be bounded by constant expressions.
+# End time: 12:37:05 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 3
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
 #     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do compile.do
+# "vlog ../src/Prol16Opcode.sv"
+do Compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:24:47 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:38:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
 # 
 # Top level modules:
-# 	RAM
-# End time: 20:24:47 on Mar 23,2015, Elapsed time: 0:00:00
+# 	--none--
+# End time: 12:38:36 on Apr 06,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:24:47 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:38:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# ** Error: ../src/Prol16Opcode.sv(4): (vlog-2730) Undefined variable: 'cRegWidth'.
+# 
+# End time: 12:38:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 3
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Opcode.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:38:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:38:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:38:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:38:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:38:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Error: ../src/Prol16State.sv(2): Invalid type 'data_v'. Please check the type of the variable 'regs'.
+# ** Error: ../src/Prol16State.sv(2): near "[": syntax error, unexpected '[', expecting function or task
+# End time: 12:38:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 4
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16State.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:39:41 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:39:41 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:39:41 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# ** Error: ../src/Prol16Opcode.sv(3): Range must be bounded by constant expressions.
+# End time: 12:39:41 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 3
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Opcode.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:40:34 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# ** Error: ../src/pkgProl16.sv(3): Range must be bounded by constant expressions.
+# End time: 12:40:34 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 2
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/pkgProl16.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:40:56 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:40:57 on Apr 06,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:40:57 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:40:57 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:40:57 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# ** Error: ../src/Prol16Opcode.sv(10): Invalid type 'data_v'. Please check the type of the variable 'data'.
+# End time: 12:40:57 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 4
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Opcode.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:41:07 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:41:07 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:41:07 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:41:07 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:41:07 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# ** Error: ../src/Prol16Opcode.sv(10): Invalid type 'data_v'. Please check the type of the variable 'data'.
+# End time: 12:41:07 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 4
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Opcode.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:42:09 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:42:09 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:42:09 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:42:10 on Apr 06,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:42:10 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:42:10 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:42:10 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Error: ../src/Prol16State.sv(2): Invalid type 'data_v'. Please check the type of the variable 'regs'.
+# ** Error: ../src/Prol16State.sv(2): near "[": syntax error, unexpected '[', expecting function or task
+# End time: 12:42:10 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 5
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16State.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:42:50 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:42:50 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:42:50 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:42:50 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:42:50 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:42:50 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:42:51 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Error: ../src/Prol16State.sv(2): Invalid type 'data_v'. Please check the type of the variable 'regs'.
+# ** Error: ../src/Prol16State.sv(2): near "[": syntax error, unexpected '[', expecting function or task
+# End time: 12:42:51 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 5
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16State.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:43:25 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:43:25 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:43:25 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:43:25 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:43:25 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:43:25 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:43:25 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:43:25 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:43:25 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Error: ../src/Prol16Model.sv(2): Invalid type 'Prol16State'. Please check the type of the variable 'state'.
+# ** Error: ../src/Prol16Model.sv(2): near "(": syntax error, unexpected '(', expecting function or task
+# End time: 12:43:25 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 6
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:47:30 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:47:30 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:47:30 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:47:30 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:47:30 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:47:30 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:47:30 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:47:30 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:47:30 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Warning: ../src/Prol16Model.sv(4): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Error: ../src/Prol16Model.sv(4): near "(": syntax error, unexpected '(', expecting ';' or ','
+# ** Error: ../src/Prol16Model.sv(10): (vlog-LRM-2400) Identifier ('Prol16Opcode') found where a type or type identifier is required.
+# 
+# End time: 12:47:30 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 6
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:52:00 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:52:00 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:52:00 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:52:00 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:52:00 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:52:00 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:52:00 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:52:00 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:52:00 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Warning: ../src/Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Error: ../src/Prol16Model.sv(5): near "(": syntax error, unexpected '(', expecting ';' or ','
+# ** Error: ../src/Prol16Model.sv(15): near "2": syntax error, unexpected INTEGER NUMBER
+# End time: 12:52:00 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 6
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:03 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:03 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:04 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:04 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:04 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:04 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:04 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:04 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:04 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Error: ../src/Prol16Model.sv(5): near "(": syntax error, unexpected '(', expecting ';' or ','
+# ** Error: ../src/Prol16Model.sv(15): near "2": syntax error, unexpected INTEGER NUMBER
+# End time: 12:55:04 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 6
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:15 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:15 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:15 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:15 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:15 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:15 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:15 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:15 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:15 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Error: ../src/Prol16Model.sv(15): near "2": syntax error, unexpected INTEGER NUMBER
+# End time: 12:55:15 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 6
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:34 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:35 on Apr 06,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:35 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:35 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:35 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:35 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:35 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:55:35 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:55:35 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Error: ../src/Prol16Model.sv(15): near "2": syntax error, unexpected INTEGER NUMBER
+# End time: 12:55:35 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 6
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:56:26 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:56:26 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:56:26 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:56:26 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:56:26 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:56:26 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:56:26 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:56:26 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:56:26 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Error: ../src/Prol16Model.sv(15): near "2": syntax error, unexpected INTEGER NUMBER
+# End time: 12:56:26 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 6
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:57:15 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:57:15 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:57:15 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:57:15 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:57:15 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:57:15 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:57:15 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:57:15 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:57:15 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Error: ../src/Prol16Model.sv(15): near ":": syntax error, unexpected ':'
+# End time: 12:57:15 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 6
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:59:56 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:59:56 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:59:56 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:59:56 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:59:56 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:59:56 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:59:56 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:59:56 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 12:59:56 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Error: ../src/Prol16Model.sv(16): near ":": syntax error, unexpected ':'
+# End time: 12:59:56 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 6
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:00:32 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:00:32 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:00:32 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:00:32 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:00:32 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:00:32 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:00:32 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:00:32 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:00:32 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Warning: ..\src\Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# ** Warning: ../src/Prol16Model.sv(7): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# ** Warning: ../src/Prol16Model.sv(11): (vlog-2250) Function "execute" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:00:32 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:01:24 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:01:24 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:01:24 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:01:24 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:01:25 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:01:25 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:01:25 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(6): (vlog-2250) Function "reset" has no return value assignment.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:01:25 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:01:25 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Error: ../src/Prol16Model.sv(9): near "endfunction": syntax error, unexpected endfunction, expecting endtask
+# ** Error: ../src/Prol16Model.sv(36): near "endfunction": syntax error, unexpected endfunction, expecting endtask
+# End time: 13:01:25 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 6
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:01:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:01:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:01:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:01:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:01:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:01:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:01:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:01:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:01:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:01:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:07:23 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:07:23 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:07:23 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:07:23 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:07:23 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:07:23 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:07:23 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:07:23 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:07:23 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:07:23 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:32:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:32:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:32:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:32:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:32:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# -- Compiling program testProl16Model
+# ** Error: ../src/testProl16Model.sv(3): (vlog-2730) Undefined variable: 'wishbone_bfm'.
+# 
+# ** Error: ../src/testProl16Model.sv(3): near "#": syntax error, unexpected '#'
+# ** Error: ../src/testProl16Model.sv(4): (vlog-2730) Undefined variable: 'Prol16State'.
+# 
+# ** Error: ../src/testProl16Model.sv(5): near "=": syntax error, unexpected '=', expecting '('
+# End time: 13:32:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 7
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/testProl16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:52 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:32:52 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:52 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:32:52 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:52 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:32:52 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:52 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:32:53 on Apr 06,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:53 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:32:53 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:32:53 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# -- Compiling program testProl16Model
+# ** Error: ../src/testProl16Model.sv(3): (vlog-2730) Undefined variable: 'Prol16State'.
+# 
+# ** Error: ../src/testProl16Model.sv(3): near "#": syntax error, unexpected '#'
+# ** Error: ../src/testProl16Model.sv(4): near "=": syntax error, unexpected '=', expecting '('
+# End time: 13:32:53 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 7
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/testProl16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:33:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:33:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:33:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:33:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:33:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:33:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:33:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:33:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:33:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:33:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:33:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
+# -- Compiling package testProl16Model_sv_unit
+# -- Importing package pkgProl16
+# -- Compiling program testProl16Model
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Error: ../src/testProl16Model.sv(6): Arg. '_state' of 'new':  Illegal assignment to type 'virtual interface Prol16State' from type 'class testProl16Model_sv_unit.Prol16State': Types are not assignment compatible.
+# ** Error: ../src/testProl16Model.sv(6): Arg. '_state' of 'new':  Illegal virtual interface assignment.
+# End time: 13:33:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 2
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 7
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/testProl16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:51:56 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:51:56 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:51:56 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:51:56 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:51:56 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:51:56 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:51:56 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:51:57 on Apr 06,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:51:57 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:51:57 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:51:57 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
+# -- Compiling package testProl16Model_sv_unit
+# -- Importing package pkgProl16
+# -- Compiling program testProl16Model
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
 # 
 # or remove the initialization in the declaration of variable.
 # 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Error: ../src/testProl16Model.sv(6): Arg. '_state' of 'new':  Illegal assignment to type 'virtual interface Prol16State' from type 'class testProl16Model_sv_unit.Prol16State': Types are not assignment compatible.
+# ** Error: ../src/testProl16Model.sv(6): Arg. '_state' of 'new':  Illegal virtual interface assignment.
+# End time: 13:51:57 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 4
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 7
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/testProl16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:58:52 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:58:52 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:58:52 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:58:52 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:58:52 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:58:52 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:58:52 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:58:52 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:58:52 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Warning: ../src/Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:58:52 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:58:52 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# -- Compiling package testProl16Model_sv_unit
+# -- Importing package pkgProl16
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# -- Compiling program testProl16Model
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# 
+# Top level modules:
+# 	testProl16Model
+# End time: 13:58:52 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 10
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:59:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:59:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:59:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:59:43 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:59:43 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:59:44 on Apr 06,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:59:44 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Error: ../src/Prol16State.sv(8): near "reset": syntax error, unexpected IDENTIFIER, expecting ';'
+# End time: 13:59:44 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 5
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/Prol16State.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:59:50 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:59:50 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:59:50 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:59:50 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:59:50 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:59:50 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:59:50 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:59:50 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:59:50 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Warning: ../src/Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 13:59:50 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 13:59:50 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# -- Compiling package testProl16Model_sv_unit
+# -- Importing package pkgProl16
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# -- Compiling program testProl16Model
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# 
+# Top level modules:
+# 	testProl16Model
+# End time: 13:59:50 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 11
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:03:17 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:03:17 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:03:18 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:03:18 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:03:18 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:03:18 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:03:18 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:03:18 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:03:18 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Warning: ../src/Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:03:18 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:03:18 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# -- Compiling package testProl16Model_sv_unit
+# -- Importing package pkgProl16
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# -- Compiling program testProl16Model
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# 
+# Top level modules:
+# 	testProl16Model
+# End time: 14:03:18 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 13
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:04:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:04:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:04:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:04:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:04:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:04:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:04:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:04:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:04:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Warning: ../src/Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:04:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:04:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(7): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(8): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# -- Compiling package testProl16Model_sv_unit
+# -- Importing package pkgProl16
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# -- Compiling program testProl16Model
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(7): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(8): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Error: ../src/testProl16Model.sv(6): Class specialization parameter must be constant.
+# End time: 14:04:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 13
+# ** Error: C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Compile.do line 7
+# C:/altera/14.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog ../src/testProl16Model.sv"
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:05:12 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:05:12 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:05:12 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:05:12 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:05:12 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:05:12 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:05:12 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:05:12 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:05:12 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Warning: ../src/Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:05:12 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:05:12 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# -- Compiling package testProl16Model_sv_unit
+# -- Importing package pkgProl16
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# -- Compiling program testProl16Model
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# 
+# Top level modules:
+# 	testProl16Model
+# End time: 14:05:12 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 13
+do SIm.do
+# vsim -gui 
+# Start time: 14:06:12 on Apr 06,2015
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./SIm.do PAUSED at line 1
+do Sim.do
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./Sim.do PAUSED at line 1
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:11:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:11:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:11:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:11:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Warning: ../src/Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:11:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# -- Compiling package testProl16Model_sv_unit
+# -- Importing package pkgProl16
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# -- Compiling program testProl16Model
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# 
+# Top level modules:
+# 	testProl16Model
+# End time: 14:11:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 13
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:36 on Apr 06,2015
+# vlog -reportprogress 300 ../src/top.sv 
+# ** Warning: ** while parsing file included at ../src/top.sv(1)
+# ** while parsing file included at ..\src\testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/top.sv(1)
+# ** while parsing file included at ..\src\testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/top.sv(1)
+# ** at ..\src\testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ** while parsing file included at ../src/top.sv(1)
+# ** at ..\src\testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ** while parsing file included at ../src/top.sv(1)
+# ** at ..\src\testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# -- Compiling package top_sv_unit
+# -- Importing package pkgProl16
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# -- Compiling program testProl16Model
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ..\src\testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ..\src\testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
 # -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Error: ../src/wishbone_bfm.sv(155): 'readDataBlock' is not a function name.
-# ** Error: ../src/wishbone_bfm.sv(155): Field/method name ($$) not in 'readDataBlock'
-# -- Compiling interface wishbone_if
-# End time: 20:24:47 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 10
-# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-# Error in macro ./compile.do line 3
-# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-#     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:25:40 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 20:25:40 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:25:40 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Error: ../src/wishbone_bfm.sv(155): 'readDataBlock' is not a function name.
-# ** Error: ../src/wishbone_bfm.sv(155): Field/method name ($$) not in 'readDataBlock'
-# -- Compiling interface wishbone_if
-# End time: 20:25:40 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 10
-# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-# Error in macro ./compile.do line 3
-# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-#     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:26:10 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 20:26:10 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:26:10 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Error: (vlog-13069) ../src/wishbone_bfm.sv(180): near "end": syntax error, unexpected end, expecting ';'.
-# 
-# ** Error: ../src/wishbone_bfm.sv(196): Illegal declaration after the statement near line '188'.  Declarations must precede statements.  Look for stray semicolons.
-# End time: 20:26:11 on Mar 23,2015, Elapsed time: 0:00:01
-# Errors: 2, Warnings: 5
-# ** Error: E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-# Error in macro ./compile.do line 3
-# E:/Programme/Modeltech_pe_edu_10.4/win32pe_edu/vlog failed.
-#     while executing
-# "vlog ../src/wishbone_bfm.sv"
-do compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:26:25 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 20:26:25 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 20:26:25 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(106): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(112): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(113): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(115): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(116): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
 # 
 # Top level modules:
 # 	top
-# End time: 20:26:25 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 10
-do sim.do
-# //  ModelSim PE Student Edition 10.4 Dec  3 2014 
-# //
-# //  Copyright 1991-2014 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
-# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
-# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
-# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
-# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
-# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
-# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
-# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
-# //
-# // NOT FOR CORPORATE OR PRODUCTION USE.
-# // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
-# // FOR HIGHER EDUCATION PURPOSES ONLY
-# //
-# vsim -gui 
-# Start time: 20:26:52 on Mar 23,2015
+# End time: 14:11:36 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 13
+do Compile.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:48 on Apr 06,2015
+# vlog -reportprogress 300 ../src/pkgProl16.sv 
+# -- Compiling package pkgProl16
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:11:48 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:48 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Command.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:11:48 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:48 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Opcode.sv 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:11:48 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:48 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16State.sv 
+# ** Warning: ../src/Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:11:48 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:48 on Apr 06,2015
+# vlog -reportprogress 300 ../src/Prol16Model.sv 
+# ** Warning: ../src/Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 14:11:48 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:48 on Apr 06,2015
+# vlog -reportprogress 300 ../src/testProl16Model.sv 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# -- Compiling package testProl16Model_sv_unit
+# -- Importing package pkgProl16
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# -- Compiling program testProl16Model
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ../src/testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ../src/testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# 
+# Top level modules:
+# 	testProl16Model
+# End time: 14:11:49 on Apr 06,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 13
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 14:11:49 on Apr 06,2015
+# vlog -reportprogress 300 ../src/top.sv 
+# ** Warning: ** while parsing file included at ../src/top.sv(1)
+# ** while parsing file included at ..\src\testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/top.sv(1)
+# ** while parsing file included at ..\src\testProl16Model.sv(1)
+# ** at ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ** while parsing file included at ../src/top.sv(1)
+# ** at ..\src\testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ** while parsing file included at ../src/top.sv(1)
+# ** at ..\src\testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ** while parsing file included at ../src/top.sv(1)
+# ** at ..\src\testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# -- Compiling package top_sv_unit
+# -- Importing package pkgProl16
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16State.sv(8): (vlog-LRM-2875) Task "reset" is being called in function "new".
+# 
+# -- Compiling program testProl16Model
+# ** Warning: ..\src\Prol16Model.sv(5): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\Prol16Model.sv(7): (vlog-2181) Use of a parameterized class Prol16State as a type creates a default specialization.
+# 
+# ** Warning: ..\src\testProl16Model.sv(5): (vlog-2244) Variable 'state' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ..\src\testProl16Model.sv(6): (vlog-2244) Variable 'model' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# ** Warning: ..\src\testProl16Model.sv(7): (vlog-2244) Variable 'opcode' is implicitly static. You must either explicitly declare it as static or automatic
+# 
+# or remove the initialization in the declaration of variable.
+# 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 14:11:49 on Apr 06,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 13
+do Sim.do
 # Loading sv_std.std
-# Loading work.wishbone_bfm_sv_unit
+# Loading work.pkgProl16
+# Loading work.top_sv_unit
 # Loading work.top
-# Loading work.wishbone_if
-# Loading work.RAM
 # ** Fatal: (vsim-3904) SystemVerilog Program Blocks are not supported in Modelsim PE.
-#    Time: 0 ns  Iteration: 0  Instance: /top File: ../src/wishbone_bfm.sv
+#    Time: 0 ps  Iteration: 0  Instance: /top File: ../src/top.sv
 # FATAL ERROR while loading design
 # Error loading design
 # Error: Error loading design
 #        Pausing macro execution
-# MACRO ./sim.do PAUSED at line 1
-do compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 21:22:57 on Mar 23,2015
-# vlog -reportprogress 300 ../src/ram.sv 
-# -- Compiling module RAM
-# 
-# Top level modules:
-# 	RAM
-# End time: 21:22:57 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim PE Student Edition vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 21:22:57 on Mar 23,2015
-# vlog -reportprogress 300 ../src/wishbone_bfm.sv 
-# ** Warning: ../src/wishbone_bfm.sv(114): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(120): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(121): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(123): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(124): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# -- Compiling package wishbone_bfm_sv_unit
-# -- Compiling module top
-# -- Compiling program test
-# ** Warning: ../src/wishbone_bfm.sv(114): (vlog-2244) Variable 'bfm' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(120): (vlog-2244) Variable 'addr' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(121): (vlog-2244) Variable 'data' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(123): (vlog-2244) Variable 'dataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# ** Warning: ../src/wishbone_bfm.sv(124): (vlog-2244) Variable 'readDataBlock' is implicitly static. You must either explicitly declare it as static or automatic
-# 
-# or remove the initialization in the declaration of variable.
-# 
-# -- Compiling interface wishbone_if
-# 
-# Top level modules:
-# 	top
-# End time: 21:22:57 on Mar 23,2015, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 10
-# End time: 21:28:29 on Mar 23,2015, Elapsed time: 1:01:37
-# Errors: 1, Warnings: 0
+# MACRO ./Sim.do PAUSED at line 1
