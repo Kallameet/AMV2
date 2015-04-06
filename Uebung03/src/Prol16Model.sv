@@ -30,7 +30,7 @@ class Prol16Model;
 		int data = 0;	// tmp data for carry calc
 		
 		// inc pc here, overwrite in jumps
-		state.pc++;
+		state.programCounter++;
 	
 		case (opcode.cmd)
 			Nop:
@@ -40,24 +40,24 @@ class Prol16Model;
 			Loadi:
 			begin
 				state.regs[opcode.ra] = opcode.data;
-				state.pc++;	// TODO: necessary?
+				state.programCounter++;	// TODO: necessary?
 			end
 			
 			Jump: 
 			begin
-				state.pc = state.regs[opcode.ra];
+				state.programCounter = state.regs[opcode.ra];
 			end
 			
 			Jumpc:
 			begin
 				if (state.cFlag == 1) 
-					state.pc = state.regs[opcode.ra];
+					state.programCounter = state.regs[opcode.ra];
 			end
 			
 			Jumpz:
 			begin
 				if (state.zFlag == 1)
-					state.pc = state.regs[opcode.ra];
+					state.programCounter = state.regs[opcode.ra];
 			end
 			
 			Move:
@@ -88,7 +88,7 @@ class Prol16Model;
 			
 			Not:
 			begin
-				state.regs[opcode.ra] = ~ state.regs[opcode.ra];
+				state.regs[opcode.ra] = ~(state.regs[opcode.ra]);
 				state.cFlag = 0;
 				calcZeroFlag(state.regs[opcode.ra]);
 			end
