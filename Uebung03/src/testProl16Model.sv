@@ -27,7 +27,7 @@ endclass
 program testProl16Model();
 	initial begin : stimuli
 		Prol16State state = new();
-		Prol16Model model = new(state);
+		Prol16Model#(32) model = new(state);
 		
 		TestClass testClass = new();
 		
@@ -146,6 +146,7 @@ program testProl16Model();
 		//Addc
 		model.state.regs[8] = 10;
 		model.state.regs[9] = 30;
+		model.state.cFlag = 0;
 		model.execute(opcode_Addc);
 		testClass.assertWithFlags(40, 34, 0, 0, model.state, 8, "Addc test 1");
 		model.state.regs[8] = 10;
@@ -180,144 +181,148 @@ program testProl16Model();
 		//Subc
 		model.state.regs[12] = 30;
 		model.state.regs[13] = 10;
+		model.state.cFlag = 0;
 		model.execute(opcode_Subc);
 		testClass.assertWithFlags(20, 41, 0, 0, model.state, 12, "Subc test 1");
 		model.state.regs[12] = 30;
 		model.state.regs[13] = 10;
 		model.state.cFlag = 1;
 		model.execute(opcode_Subc);
-		testClass.assertWithFlags(19, 41, 0, 0, model.state, 12, "Subc test 2");
+		testClass.assertWithFlags(19, 42, 0, 0, model.state, 12, "Subc test 2");
 		model.state.regs[12] = 10;
 		model.state.regs[13] = 10;
+		model.state.cFlag = 0;
 		model.execute(opcode_Subc);
-		testClass.assertWithFlags(0, 42, 0, 1, model.state, 12, "Subc test 3");
+		testClass.assertWithFlags(0, 43, 0, 1, model.state, 12, "Subc test 3");
 		model.state.regs[12] = 1;
 		model.state.regs[13] = 2;
 		model.execute(opcode_Subc);
-		testClass.assertWithFlags(65535, 43, 1, 0, model.state, 12, "Subc test 4");
+		testClass.assertWithFlags(65535, 44, 1, 0, model.state, 12, "Subc test 4");
 		
 		//Comp
 		model.state.regs[14] = 30;
 		model.state.regs[15] = 10;
 		model.execute(opcode_Comp);
-		testClass.assertWithFlags(30, 44, 0, 0, model.state, 14, "Comp test 1");
+		testClass.assertWithFlags(30, 45, 0, 0, model.state, 14, "Comp test 1");
 		model.state.regs[14] = 30;
 		model.state.regs[15] = 10;
 		model.state.cFlag = 1;
 		model.execute(opcode_Comp);
-		testClass.assertWithFlags(30, 45, 0, 0, model.state, 14, "Comp test 2");
+		testClass.assertWithFlags(30, 46, 0, 0, model.state, 14, "Comp test 2");
 		model.state.regs[14] = 10;
 		model.state.regs[15] = 10;
 		model.execute(opcode_Comp);
-		testClass.assertWithFlags(10, 46, 0, 1, model.state, 14, "Comp test 3");
+		testClass.assertWithFlags(10, 47, 0, 1, model.state, 14, "Comp test 3");
 		model.state.regs[14] = 1;
 		model.state.regs[15] = 2;
 		model.execute(opcode_Comp);
-		testClass.assertWithFlags(1, 47, 1, 0, model.state, 14, "Comp test 4");
+		testClass.assertWithFlags(1, 48, 1, 0, model.state, 14, "Comp test 4");
 		
 		//Inc
 		model.state.regs[16] = 30;		
 		model.execute(opcode_Inc);
-		testClass.assertWithFlags(31, 48, 0, 0, model.state, 16, "Inc test 1");
+		testClass.assertWithFlags(31, 49, 0, 0, model.state, 16, "Inc test 1");
 		model.state.regs[16] = 30;		
 		model.state.cFlag = 1;
 		model.execute(opcode_Inc);
-		testClass.assertWithFlags(31, 49, 0, 0, model.state, 16, "Inc test 2");
+		testClass.assertWithFlags(31, 50, 0, 0, model.state, 16, "Inc test 2");
 		model.state.regs[16] = 0;
 		model.execute(opcode_Inc);
-		testClass.assertWithFlags(1, 50, 0, 0, model.state, 16, "Inc test 3");
+		testClass.assertWithFlags(1, 51, 0, 0, model.state, 16, "Inc test 3");
 		model.state.regs[16] = 65535;
 		model.execute(opcode_Inc);
-		testClass.assertWithFlags(0, 51, 1, 1, model.state, 16, "Inc test 4");
+		testClass.assertWithFlags(0, 52, 1, 1, model.state, 16, "Inc test 4");
 		
 		//Dec
 		model.state.regs[18] = 30;		
 		model.execute(opcode_Dec);
-		testClass.assertWithFlags(29, 52, 0, 0, model.state, 18, "Dec test 1");
+		testClass.assertWithFlags(29, 53, 0, 0, model.state, 18, "Dec test 1");
 		model.state.regs[18] = 30;		
 		model.state.cFlag = 1;
 		model.execute(opcode_Dec);
-		testClass.assertWithFlags(29, 53, 0, 0, model.state, 18, "Dec test 2");
+		testClass.assertWithFlags(29, 54, 0, 0, model.state, 18, "Dec test 2");
 		model.state.regs[18] = 0;
 		model.execute(opcode_Dec);
-		testClass.assertWithFlags(65535, 54, 1, 0, model.state, 18, "Dec test 3");
+		testClass.assertWithFlags(65535, 55, 1, 0, model.state, 18, "Dec test 3");
 		model.state.regs[18] = 1;
 		model.execute(opcode_Dec);
-		testClass.assertWithFlags(0, 55, 0, 1, model.state, 18, "Dec test 4");
+		testClass.assertWithFlags(0, 56, 0, 1, model.state, 18, "Dec test 4");
 		
 		//Shl
 		model.state.regs[20] = 0;		
 		model.execute(opcode_Shl);
-		testClass.assertWithFlags(0, 56, 0, 1, model.state, 20, "Shl test 1");
+		testClass.assertWithFlags(0, 57, 0, 1, model.state, 20, "Shl test 1");
 		model.state.regs[20] = 1;		
 		model.state.cFlag = 1;
 		model.execute(opcode_Shl);
-		testClass.assertWithFlags(2, 57, 0, 0, model.state, 20, "Shl test 2");
+		testClass.assertWithFlags(2, 58, 0, 0, model.state, 20, "Shl test 2");
 		model.state.regs[20] = 65535;
 		model.execute(opcode_Shl);
-		testClass.assertWithFlags(65534, 58, 1, 0, model.state, 20, "Shl test 3");
+		testClass.assertWithFlags(65534, 59, 1, 0, model.state, 20, "Shl test 3");
 		model.state.regs[20] = 32768;
 		model.execute(opcode_Shl);
-		testClass.assertWithFlags(0, 59, 1, 1, model.state, 20, "Shl test 4");
+		testClass.assertWithFlags(0, 60, 1, 1, model.state, 20, "Shl test 4");
 		
 		//Shr
 		model.state.regs[22] = 0;		
 		model.execute(opcode_Shr);
-		testClass.assertWithFlags(0, 60, 0, 1, model.state, 22, "Shr test 1");
+		testClass.assertWithFlags(0, 61, 0, 1, model.state, 22, "Shr test 1");
 		model.state.regs[22] = 2;		
 		model.state.cFlag = 1;
 		model.execute(opcode_Shr);
-		testClass.assertWithFlags(1, 61, 0, 0, model.state, 22, "Shr test 2");
+		testClass.assertWithFlags(1, 62, 0, 0, model.state, 22, "Shr test 2");
 		model.state.regs[22] = 65535;
 		model.execute(opcode_Shr);
-		testClass.assertWithFlags(32767, 62, 1, 0, model.state, 22, "Shr test 3");
+		testClass.assertWithFlags(32767, 63, 1, 0, model.state, 22, "Shr test 3");
 		model.state.regs[22] = 1;
 		model.execute(opcode_Shr);
-		testClass.assertWithFlags(0, 63, 1, 1, model.state, 22, "Shr test 4");
+		testClass.assertWithFlags(0, 64, 1, 1, model.state, 22, "Shr test 4");
 		
 		//Shlc
-		model.state.regs[24] = 0;		
+		model.state.regs[24] = 0;
+		model.state.cFlag = 0;	
 		model.execute(opcode_Shlc);
-		testClass.assertWithFlags(0, 64, 0, 1, model.state, 24, "Shlc test 1");
+		testClass.assertWithFlags(0, 65, 0, 1, model.state, 24, "Shlc test 1");
 		model.state.regs[24] = 1;		
 		model.state.cFlag = 1;
 		model.execute(opcode_Shlc);
-		testClass.assertWithFlags(3, 65, 0, 0, model.state, 24, "Shlc test 2");
+		testClass.assertWithFlags(3, 66, 0, 0, model.state, 24, "Shlc test 2");
 		model.state.regs[24] = 65535;
 		model.execute(opcode_Shlc);
-		testClass.assertWithFlags(65534, 66, 1, 0, model.state, 24, "Shlc test 3");
+		testClass.assertWithFlags(65534, 67, 1, 0, model.state, 24, "Shlc test 3");
 		model.state.regs[24] = 32768;
 		model.state.cFlag = 0;
 		model.execute(opcode_Shlc);
-		testClass.assertWithFlags(0, 67, 1, 1, model.state, 24, "Shlc test 4");
+		testClass.assertWithFlags(0, 68, 1, 1, model.state, 24, "Shlc test 4");
 		
 		//Shrc
-		model.state.regs[26] = 0;		
+		model.state.regs[26] = 0;
+		model.state.cFlag = 0;
 		model.execute(opcode_Shrc);
-		testClass.assertWithFlags(0, 68, 0, 1, model.state, 26, "Shrc test 1");
+		testClass.assertWithFlags(0, 69, 0, 1, model.state, 26, "Shrc test 1");
 		model.state.regs[26] = 2;		
 		model.state.cFlag = 1;
 		model.execute(opcode_Shrc);
-		testClass.assertWithFlags(32769, 69, 0, 0, model.state, 26, "Shrc test 2");
+		testClass.assertWithFlags(32769, 70, 0, 0, model.state, 26, "Shrc test 2");
 		model.state.regs[26] = 65535;
 		model.execute(opcode_Shrc);
-		testClass.assertWithFlags(32767, 70, 1, 0, model.state, 26, "Shrc test 3");
+		testClass.assertWithFlags(32767, 71, 1, 0, model.state, 26, "Shrc test 3");
 		model.state.regs[26] = 1;
 		model.state.cFlag = 0;
 		model.execute(opcode_Shrc);
-		testClass.assertWithFlags(0, 71, 1, 1, model.state, 26, "Shrc test 4");
+		testClass.assertWithFlags(0, 72, 1, 1, model.state, 26, "Shrc test 4");
 				
 		//Invalid
 		model.state.regs[28] = 123;
 		model.state.cFlag = 0;
 		model.state.zFlag = 0;
 		model.execute(opcode_Invalid);
-		testClass.assertWithFlags(123, 72, 0, 0, model.state, 28, "Invalid test");
+		testClass.assertWithFlags(123, 73, 0, 0, model.state, 28, "Invalid test");
 		
 		//InvalidRegister
 		model.state.regs[31] = 1234;
 		model.execute(opcode_InvalidRegister);
-		testClass.assertWithFlags(1234, 73, 0, 0, model.state, 31, "Invalid register test");
+		testClass.assertWithFlags(1234, 74, 0, 0, model.state, 31, "Invalid register test");
 		
 		$stop;
 	end : stimuli
