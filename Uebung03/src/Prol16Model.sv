@@ -1,7 +1,7 @@
 `include "Prol16State.sv"
 `include "Prol16Opcode.sv"
 
-class Prol16Model;
+class Prol16Model#(parameter int gNumRegs);
 	Prol16State state;
 	
 	function new(Prol16State _state);
@@ -28,10 +28,17 @@ class Prol16Model;
 	
 	task execute(Prol16Opcode opcode);
 		int data = 0;	// tmp data for carry calc
+		bit tmpCFlag = 0; // tmp carry flag
 		
 		// inc pc here, overwrite in jumps
 		state.programCounter++;
-	
+		
+	  if (opcode.ra > (gNumRegs - 1) || opcode.ra < 0 ||
+	      opcode.rb > (gNumRegs - 1) || opcode.rb < 0)
+	      $display("Illegal register, doing nop");
+	  else
+		begin
+		
 		case (opcode.cmd)
 			Nop:
 			begin
@@ -150,39 +157,54 @@ class Prol16Model;
 			
 			Shl:
 			begin
-				data = state.regs[opcode.ra] << 1;
-				calcCarryFlag(data);
-				state.regs[opcode.ra] = data;
+				if (state.regs[opcode.ra][$size(pkgProl16::data_v) - 1] == 1)
+				  state.cFlag = 1;
+				else
+				  state.cFlag = 0;
+				
+				state.regs[opcode.ra] = state.regs[opcode.ra] << 1;
 				calcZeroFlag(state.regs[opcode.ra]);
 			end
 			
 			Shr:
 			begin
-				data = state.regs[opcode.ra] >> 1;
-				calcCarryFlag(data);
-				state.regs[opcode.ra] = data;
+        			if (state.regs[opcode.ra][0] == 1)
+				  state.cFlag = 1;
+				else
+				  state.cFlag = 0;
+				  
+        			state.regs[opcode.ra] = state.regs[opcode.ra] >> 1;
 				calcZeroFlag(state.regs[opcode.ra]);
 			end
 			
 			Shlc:
 			begin
-				data = state.regs[opcode.ra] << 1;
-				data[0] = state.cFlag;
-				calcCarryFlag(data);
-				state.regs[opcode.ra] = data;
+			  if (state.regs[opcode.ra][$size(pkgProl16::data_v) - 1] == 1)
+				  tmpCFlag = 1;
+				else
+				  tmpCFlag = 0;
+				
+				state.regs[opcode.ra] = state.regs[opcode.ra] << 1;
+				state.regs[opcode.ra][0] = state.cFlag;
+				state.cFlag = tmpCFlag;
 				calcZeroFlag(state.regs[opcode.ra]);
 			end
 			
 			Shrc:
 			begin
-				data = state.regs[opcode.ra] >> 1;
-				data[$size(pkgProl16::data_v) - 1] = state.cFlag;
-				calcCarryFlag(data);
-				state.regs[opcode.ra] = data;
+			  if (state.regs[opcode.ra][0] == 1)
+				  tmpCFlag = 1;
+				else
+				  tmpCFlag = 0;
+				  
+				state.regs[opcode.ra] = state.regs[opcode.ra] >> 1;
+				state.regs[opcode.ra][$size(pkgProl16::data_v) - 1] = state.cFlag;
+				state.cFlag = tmpCFlag;
 				calcZeroFlag(state.regs[opcode.ra]);
 			end
 			
 			default : $display("Wrong opcode: doing nop");
 		endcase
+		end
 	endtask
 endclass
