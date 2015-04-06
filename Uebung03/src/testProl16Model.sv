@@ -5,6 +5,9 @@ program testProl16Model();
 		Prol16State#(32) state = new();
 		Prol16Model model = new(state);
 		Prol16Opcode opcode = new(0, 0, Nop, 0);
-		model.execute(opcode);	
+		Prol16Opcode opcode1 = new(1, 2, Add, 0);
+		model.execute(opcode);
+		model.execute(opcode1);
+		$stop;
 	end : stimuli
 endprogram
