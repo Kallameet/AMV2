@@ -24,18 +24,55 @@ class TestClass;
 	endtask
 endclass
 
+class TestClassDuv;	
+	task assertWithoutFlags(int expectedRegisterValue, int expectedPCValue, logic [15:0] cpuRegs [31:0], logic [15:0] cpuPc, int register, string text);
+    assert (expectedRegisterValue == cpuRegs[register])
+		else $error("DUV: Expected Register Value: %d, Actual Register Value: %d, Info: %s", expectedRegisterValue, cpuRegs[register], text);
+		
+		assert (expectedPCValue == cpuPc)
+		else $error("DUV: Expected PC Value: %d, Actual PC Value: %d, Info: %s", expectedPCValue, cpuPc, text);
+  endtask
+	
+  task assertWithFlags(int expectedRegisterValue, int expectedPCValue, int expectedCarryFlag, int expectedZeroFlag, Prol16State state, int register, string text);
+    
+  endtask
+endclass
+
 program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 	logic [15:0] cpuRegs [31:0];
 	logic [15:0] cpuPc;
 	logic cpuCFlag;
 	logic cpuZFlag;
 	
+	event CommandStart;
+	event End;
+	
+	task trigger(Prol16Opcode opcode);
+  		while (!End.triggered) begin
+  		  @(negedge cpu.mem_oe_n)
+		  begin
+		    $display("negEdge oe");
+		    cpu.mem_data_tb[15:10] <= opcode.cmd;
+		    cpu.mem_data_tb[9:5] <= opcode.ra;
+		    cpu.mem_data_tb[4:0] <= opcode.rb;	  
+		  end
+		  @(posedge cpu.mem_oe_n)
+		  begin
+		    $display("posEdge oe");
+		    -> CommandStart;
+		  end
+	 end	
+	endtask
+	
 	initial begin : stimuli
 		Prol16State state = new();
 		Prol16Model#(32) model = new(state);
 		
 		TestClass testClass = new();
-				
+		TestClassDuv testClassDuv = new();
+		
+		Prol16Opcode opcode = new(0, 0, Nop, 0);
+		
 		Prol16Opcode opcode_Nop = new(0, 0, Nop, 0);
 		Prol16Opcode opcode_Loadi = new(0, 3, Loadi, 50);
 		Prol16Opcode opcode_Loadi2 = new(1, 3, Loadi, 20);
@@ -70,30 +107,46 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(0)", "/top/TheTest/cpuRegs(0)");
 		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(1)", "/top/TheTest/cpuRegs(1)");
 		// ...
+			
 		
-		$init_signal_spy("/top/TheCpu/datapath_inst/pc", "/top/TheTest/cpuPc");
+		$init_signal_spy("/top/TheCpu/datapath_inst/RegPC", "/top/TheTest/cpuPc");
 		$init_signal_spy("/top/TheCpu/carry_out", "/top/TheTest/cpuCFlag");
 		$init_signal_spy("/top/TheCpu/zero", "/top/TheTest/cpuZFlag");
+		
 		
 		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(0)" , "16#0000", 0, 1);
 		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(1)", "16#0000", 0, 1);
 		// ...
-		
 	
 		//Reset
 		model.reset();
 		testClass.assertWithoutFlags(0, 0, model.state, 12, "Reset test");
 		
 		// generate reset -----------------------------------------------------
-        rst = 0;
-        #10 rst = 1;
-        #20 rst = 0;
-		
-		
-		
+    rst = 1;
+    #10 rst = 0;
+    #20 rst = 1;
+		  		
+  		fork
+  		  trigger(opcode);
+		join_none
+				
 		//Nop
-		model.execute(opcode_Nop);
-		testClass.assertWithoutFlags(0, 1, model.state, 0, "Nop test");
+		@(CommandStart);
+		  $display("testing nop");
+		  testClassDuv.assertWithoutFlags(0, 0, cpuRegs, cpuPc, 0, "Nop test"); // check first op
+		  model.execute(opcode_Nop);
+		  testClass.assertWithoutFlags(0, 1, model.state, 0, "Nop test");
+		  // TODO: compare both?
+		  
+		
+		#20
+		opcode.cmd = And;
+				
+		@(CommandStart);
+		  $display("testing and");
+		  testClassDuv.assertWithoutFlags(0, 1, cpuRegs, cpuPc, 0, "Nop test"); // check second op
+		  
 		
 		//Loadi
 		model.execute(opcode_Loadi);
@@ -350,6 +403,7 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		model.execute(opcode_InvalidRegister);
 		testClass.assertWithFlags(1234, 74, 0, 0, model.state, 31, "Invalid register test");
 		
+		-> End;
 		$stop;
 	end : stimuli
 endprogram
