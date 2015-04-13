@@ -76,10 +76,7 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		  @(posedge cpu.mem_oe_n)
 		  begin
 		    $display("posEdge oe");
-			if (LoadiOccurred == 0)
-			begin
-				-> CommandStart;
-			end
+			-> CommandStart;
 		  end
 		end	
 	endtask
@@ -214,12 +211,16 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		@(CommandStart);
 		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Nop test");
 		
+		@(CommandStart);
+		
 		//Loadi
 		model.execute(opcode);		
 		opcode = opcode_Loadi2;		
 		@(CommandStart);
 		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Loadi test 1");		
 		testClass.assertWithoutFlags(50, 3, model.state, 0, "Loadi test 1");	
+		
+		@(CommandStart);
 		
 		model.execute(opcode);		
 		opcode = opcode_Jump;
@@ -251,55 +252,108 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		
 		//Jumpz
 		model.execute(opcode_Jumpz);
+		opcode = opcode_Jumpz;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 1, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Jumpz test Zero = 0");
 		testClass.assertWithoutFlags(20, 51, model.state, 1, "Jumpz test Zero = 0");
 				
 		model.state.zFlag = 1;
+		$signal_force("/top/TheCpu/zero", "1", 0, 1);
 		model.execute(opcode_Jumpz);
+		opcode = opcode_Move;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 1, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Jumpz test Zero = 1");
 		testClass.assertWithoutFlags(20, 20, model.state, 1, "Jumpz test Zero = 1");
 		
 		//Move
 		model.execute(opcode_Move);
+		opcode = opcode_Move2;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 2, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Move test 1");
 		testClass.assertWithoutFlags(50, 21, model.state, 2, "Move test 1");
+		
 		model.execute(opcode_Move2);
+		opcode = opcode_And;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 2, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Move test 2");
 		testClass.assertWithoutFlags(20, 22, model.state, 2, "Move test 2");
 		
 		//And
 		model.state.regs[3] = 64;
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(3)", "16#0040", 0, 1);
 		model.execute(opcode_And);
+		opcode = opcode_And2;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 2, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "And test 1");
 		testClass.assertWithFlags(16, 23, 0, 0, model.state, 2, "And test 1");
+		
 		model.execute(opcode_And2);
+		opcode = opcode_Or;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 2, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "And test 2");
 		testClass.assertWithFlags(0, 24, 0, 1, model.state, 2, "And test 2");
 		
 		//Or
 		model.execute(opcode_Or);
+		opcode = opcode_Or2;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 2, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Or test 1");
 		testClass.assertWithFlags(0, 25, 0, 1, model.state, 2, "Or test 1");
+		
 		model.execute(opcode_Or2);
+		opcode = opcode_Xor;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 2, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Or test 2");
 		testClass.assertWithFlags(64, 26, 0, 0, model.state, 2, "Or test 2");
 		
 		//Xor
 		model.execute(opcode_Xor);
+		opcode = opcode_Xor2;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 2, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Xor test 1");
 		testClass.assertWithFlags(0, 27, 0, 1, model.state, 2, "Xor test 1");
+		
 		model.state.regs[4] = 96;
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(3)", "16#0060", 0, 1);
 		model.execute(opcode_Xor2);
+		opcode = opcode_Not;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 3, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Xor test 2");
 		testClass.assertWithFlags(32, 28, 0, 0, model.state, 3, "Xor test 2");
 		
 		//Not
 		model.execute(opcode_Not);
+		opcode = opcode_Not2;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 3, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Not test 1");
 		testClass.assertWithFlags(65503, 29, 0, 0, model.state, 3, "Not test 1");
+		
 		model.state.regs[5] = 65535;
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(3)", "16#FFFF", 0, 1);
 		model.execute(opcode_Not2);
+		opcode = opcode_Add;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 5, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Not test 2");
 		testClass.assertWithFlags(0, 30, 0, 1, model.state, 5, "Not test 2");
 		
 		//Add
 		model.state.regs[6] = 10;
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(3)", "16#000A", 0, 1);
 		model.state.regs[7] = 30;
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(3)", "16#001E", 0, 1);
 		model.state.cFlag = 1;
+		$signal_force("/top/TheCpu/carry_out", "1", 0, 1);
 		model.execute(opcode_Add);
+		opcode = opcode_Add;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 6, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Add test 1");
 		testClass.assertWithFlags(40, 31, 0, 0, model.state, 6, "Add test 1");
+		
 		model.state.regs[6] = 65535;
 		model.state.regs[7] = 1;
 		model.execute(opcode_Add);
 		testClass.assertWithFlags(0, 32, 1, 1, model.state, 6, "Add test 2");
+		
 		model.state.regs[6] = 65535;
 		model.state.regs[7] = 2;
 		model.execute(opcode_Add);
