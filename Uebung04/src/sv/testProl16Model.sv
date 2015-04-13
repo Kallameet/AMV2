@@ -47,9 +47,11 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 	event CommandStart;
 	event End;
 	
+	Prol16Opcode opcode = new(0, 0, Nop, 0);
+	
 	bit LoadiOccurred = 0;
 	
-	task trigger(Prol16Opcode opcode);
+	task trigger();
   		while (!End.triggered) begin
   		  @(negedge cpu.mem_oe_n)
 		  begin
@@ -87,9 +89,7 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		Prol16Model#(32) model = new(state);
 		
 		TestClass testClass = new();
-		
-		Prol16Opcode opcode = new(0, 0, Nop, 0);
-		
+						
 		Prol16Opcode opcode_Nop = new(0, 0, Nop, 0);
 		Prol16Opcode opcode_Loadi = new(0, 3, Loadi, 50);
 		Prol16Opcode opcode_Loadi2 = new(1, 3, Loadi, 20);
@@ -201,42 +201,53 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		#20 rst = 1;
 		  		
   		fork
-  		  trigger(opcode);
+  		  trigger();
 		join_none
 
 		
 		//Nop
 		@(CommandStart);		
-		testClass.assertWithDuv(model.state, 12, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Reset test");								
-		model.execute(opcode);		
-				
+		testClass.assertWithDuv(model.state, 12, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Reset test");	
+		
+		model.execute(opcode);				
 		opcode = opcode_Loadi;
 		@(CommandStart);
-		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Nop test");		
-		//Loadi
-		model.execute(opcode);
+		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Nop test");
 		
+		//Loadi
+		model.execute(opcode);		
 		opcode = opcode_Loadi2;		
 		@(CommandStart);
 		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Loadi test 1");		
 		testClass.assertWithoutFlags(50, 3, model.state, 0, "Loadi test 1");	
-		model.execute(opcode);
 		
+		model.execute(opcode);		
+		opcode = opcode_Jump;
 		@(CommandStart);
 		testClass.assertWithDuv(model.state, 1, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Loadi test 2");
 		testClass.assertWithoutFlags(20, 5, model.state, 1, "Loadi test 2");
 		
 		//Jump
-		model.execute(opcode_Jump);
+		model.execute(opcode);
+		opcode = opcode_Jumpc;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Jump test");
 		testClass.assertWithoutFlags(50, 50, model.state, 0, "Jump test");
 		
 		//Jumpc
 		model.execute(opcode_Jumpc);
+		opcode = opcode_Jumpc;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Jumpc test");
 		testClass.assertWithoutFlags(50, 51, model.state, 0, "Jumpc test Carry = 0");
 				
 		model.state.cFlag = 1;
+		$signal_force("/top/TheCpu/carry_out", "1", 0, 1);
 		model.execute(opcode_Jumpc);
-		testClass.assertWithoutFlags(50, 50, model.state, 0, "Jumpc test Carry = 0");
+		opcode = opcode_Jumpz;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Jumpc test Carry = 1");
+		testClass.assertWithoutFlags(50, 50, model.state, 0, "Jumpc test Carry = 1");
 		
 		//Jumpz
 		model.execute(opcode_Jumpz);
@@ -244,7 +255,7 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 				
 		model.state.zFlag = 1;
 		model.execute(opcode_Jumpz);
-		testClass.assertWithoutFlags(20, 20, model.state, 1, "Jumpz test Zero = 0");
+		testClass.assertWithoutFlags(20, 20, model.state, 1, "Jumpz test Zero = 1");
 		
 		//Move
 		model.execute(opcode_Move);
