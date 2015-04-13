@@ -68,6 +68,10 @@ Die Funktion hat die Form \texttt{\textdollar signal\_force(<dest\_object>, <val
 \section{Testfälle}
 Die Operationen werden auf der CPU, das heißt dem DUV, ausgeführt. Danach werden die Werte vom PC, den Registern und die Flags mit dem Modell des Prol16 verglichen.
 
+Es gibt zwei Möglichkeiten die Register und die Carry Flags zu setzen: Einerseits mithilfe von \texttt{signal\_force} die Signale direkt in der CPU setzen oder andererseits die Register mit \texttt{loadi} zu laden bzw. die Flags mit z.B. Add. 
+
+In den Testfällen wurden die Signale mit \texttt{signal\_force} gesetzt. Das Problem hier ist allerdings dass die Register und Flags dann den Wert behalten und nicht bei der Operation die gerade ausgeführt wird geändert werden. Dies führt dazu, dass die Register und Flags dann beim nächsten Befehl falsch sind.
+
 \section{Source Code}
 
 Der Sourcecode des Prol16 wurde nicht hinzugefügt, da der von der Elearning Plattform verwendet wurde.
