@@ -43,7 +43,7 @@ package prol16_pack is
 
   ----------------------------------------------------------------------
   -- register set
-  constant registers_c : natural := 8;  -- max 32
+  constant registers_c : natural := 32;  -- max 32
   -- -1 is 'X' or out of range
   subtype  reg_idx_t is integer range -1 to registers_c - 1;
 

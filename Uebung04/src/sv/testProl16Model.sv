@@ -38,20 +38,6 @@ class TestClass;
 	endtask
 endclass
 
-class TestClassDuv;	
-	task assertWithoutFlags(int expectedRegisterValue, int expectedPCValue, logic [15:0] cpuRegs [31:0], logic [15:0] cpuPc, int register, string text);
-    assert (expectedRegisterValue == cpuRegs[register])
-		else $error("DUV: Expected Register Value: %d, Actual Register Value: %d, Info: %s", expectedRegisterValue, cpuRegs[register], text);
-		
-		assert (expectedPCValue == cpuPc)
-		else $error("DUV: Expected PC Value: %d, Actual PC Value: %d, Info: %s", expectedPCValue, cpuPc, text);
-  endtask
-	
-  task assertWithFlags(int expectedRegisterValue, int expectedPCValue, int expectedCarryFlag, int expectedZeroFlag, Prol16State state, int register, string text);
-    
-  endtask
-endclass
-
 program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 	logic [15:0] cpuRegs [31:0];
 	logic [15:0] cpuPc;
@@ -61,21 +47,39 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 	event CommandStart;
 	event End;
 	
+	bit LoadiOccurred = 0;
+	
 	task trigger(Prol16Opcode opcode);
   		while (!End.triggered) begin
   		  @(negedge cpu.mem_oe_n)
 		  begin
 		    $display("negEdge oe");
-		    cpu.mem_data_tb[15:10] <= opcode.cmd;
-		    cpu.mem_data_tb[9:5] <= opcode.ra;
-		    cpu.mem_data_tb[4:0] <= opcode.rb;	  
+			if (LoadiOccurred == 0)
+			begin
+				cpu.mem_data_tb[15:10] <= opcode.cmd;
+				cpu.mem_data_tb[9:5] <= opcode.ra;
+				cpu.mem_data_tb[4:0] <= opcode.rb;	 
+	
+				if (opcode.cmd == Loadi) 
+				begin					
+					LoadiOccurred = 1;
+				end
+			end
+			else
+			begin
+				cpu.mem_data_tb <= opcode.data;
+				LoadiOccurred = 0;
+			end			
 		  end
 		  @(posedge cpu.mem_oe_n)
 		  begin
 		    $display("posEdge oe");
-		    -> CommandStart;
+			if (LoadiOccurred == 0)
+			begin
+				-> CommandStart;
+			end
 		  end
-	 end	
+		end	
 	endtask
 	
 	initial begin : stimuli
@@ -204,36 +208,23 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		
 		//Nop
 		@(CommandStart);		
-		testClass.assertWithDuv(model.state, 12, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Reset test");
-		
-		//$display("testing nop");
-		//testClassDuv.assertWithoutFlags(0, 0, cpuRegs, cpuPc, 0, "Nop test"); // check first op
-				
-		model.execute(opcode_Nop);
-		//testClass.assertWithoutFlags(0, 1, model.state, 0, "Nop test");
-		// TODO: compare both?
-		  
-		
-		//#20
-		//opcode.cmd = And;
+		testClass.assertWithDuv(model.state, 12, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Reset test");								
+		model.execute(opcode);		
 				
 		opcode = opcode_Loadi;
 		@(CommandStart);
-		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Nop test");
-		
-		//$display("testing and");
-		//testClassDuv.assertWithoutFlags(0, 1, cpuRegs, cpuPc, 0, "Nop test"); // check second op
-		  
-		
+		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Nop test");		
 		//Loadi
-		model.execute(opcode_Loadi);
+		model.execute(opcode);
 		
-		opcode = opcode_Loadi2;
+		opcode = opcode_Loadi2;		
 		@(CommandStart);
-		testClass.assertWithDuv(model.state, 3, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Loadi test 1");
+		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Loadi test 1");		
+		testClass.assertWithoutFlags(50, 3, model.state, 0, "Loadi test 1");	
+		model.execute(opcode);
 		
-		testClass.assertWithoutFlags(50, 3, model.state, 0, "Loadi test 1");
-		model.execute(opcode_Loadi2);
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 1, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Loadi test 2");
 		testClass.assertWithoutFlags(20, 5, model.state, 1, "Loadi test 2");
 		
 		//Jump
