@@ -1,4 +1,4 @@
-typedef enum 
+typedef enum bit [5:0]
 	{
 		Nop,
 		Loadi,
