@@ -152,8 +152,8 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(31)", "/top/TheTest/cpuRegs(31)");
 				
 		$init_signal_spy("/top/TheCpu/datapath_inst/RegPC", "/top/TheTest/cpuPc");
-		$init_signal_spy("/top/TheCpu/carry_out", "/top/TheTest/cpuCFlag");
-		$init_signal_spy("/top/TheCpu/zero", "/top/TheTest/cpuZFlag");		
+		$init_signal_spy("/top/TheCpu/control_inst/Carry", "/top/TheTest/cpuCFlag");
+		$init_signal_spy("/top/TheCpu/control_inst/Zero", "/top/TheTest/cpuZFlag");		
 		
 		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(0)", "16#0000", 0, 1);
 		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(1)", "16#0000", 0, 1);
@@ -230,20 +230,20 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		
 		//Jump
 		model.execute(opcode);
-		opcode = opcode_Jumpc;
+		opcode = opcode_Jumpc;		
 		@(CommandStart);
 		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Jump test");
 		testClass.assertWithoutFlags(50, 50, model.state, 0, "Jump test");
 		
 		//Jumpc
 		model.execute(opcode_Jumpc);
-		opcode = opcode_Jumpc;
+		opcode = opcode_Jumpc;		
 		@(CommandStart);
 		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Jumpc test");
 		testClass.assertWithoutFlags(50, 51, model.state, 0, "Jumpc test Carry = 0");
 				
-		model.state.cFlag = 1;
-		$signal_force("/top/TheCpu/carry_out", "1", 0, 1);
+		model.state.cFlag = 1;	
+		$signal_force("/top/TheCpu/control_inst/Carry", "1", 0, 1);				
 		model.execute(opcode_Jumpc);
 		opcode = opcode_Jumpz;
 		@(CommandStart);
@@ -252,13 +252,13 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		
 		//Jumpz
 		model.execute(opcode_Jumpz);
-		opcode = opcode_Jumpz;
+		opcode = opcode_Jumpz;		
 		@(CommandStart);
 		testClass.assertWithDuv(model.state, 1, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Jumpz test Zero = 0");
 		testClass.assertWithoutFlags(20, 51, model.state, 1, "Jumpz test Zero = 0");
 				
 		model.state.zFlag = 1;
-		$signal_force("/top/TheCpu/zero", "1", 0, 1);
+		$signal_force("/top/TheCpu/control_inst/Zero", "1", 0, 1);		
 		model.execute(opcode_Jumpz);
 		opcode = opcode_Move;
 		@(CommandStart);
@@ -342,7 +342,7 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		model.state.regs[7] = 30;
 		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(3)", "16#001E", 0, 1);
 		model.state.cFlag = 1;
-		$signal_force("/top/TheCpu/carry_out", "1", 0, 1);
+		$signal_force("/top/TheCpu/control_inst/Carry", "1", 0, 1);
 		model.execute(opcode_Add);
 		opcode = opcode_Add;
 		@(CommandStart);
