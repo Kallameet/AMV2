@@ -87,7 +87,6 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		Prol16Model#(32) model = new(state);
 		
 		TestClass testClass = new();
-		TestClassDuv testClassDuv = new();
 		
 		Prol16Opcode opcode = new(0, 0, Nop, 0);
 		
