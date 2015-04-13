@@ -3,11 +3,11 @@ vlib work
 vlog ../src/sv/ifProl16.sv
 vlog ../src/sv/pkgProl16.sv
 vlog ../src/sv/Prol16Command.sv
-vlog ../src/sv/Prol16Opcode.sv +incdir+../src
-vlog ../src/sv/Prol16State.sv +incdir+../src
-vlog ../src/sv/Prol16Model.sv +incdir+../src
-vlog ../src/sv/testProl16Model.sv +incdir+../src
-vlog ../src/sv/top.sv +incdir+../src
+vlog ../src/sv/Prol16Opcode.sv +incdir+../src/sv
+vlog ../src/sv/Prol16State.sv +incdir+../src/sv
+vlog ../src/sv/Prol16Model.sv +incdir+../src/sv
+vlog ../src/sv/testProl16Model.sv +incdir+../src/sv
+vlog ../src/sv/top.sv +incdir+../src/sv
 
 vcom -87 ../src/vhdl/prol16_pack.vhd
 vcom -87 ../src/vhdl/reg_file.vhd
