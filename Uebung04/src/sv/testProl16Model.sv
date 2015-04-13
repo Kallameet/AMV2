@@ -22,6 +22,20 @@ class TestClass;
 		assert (expectedZeroFlag == state.zFlag)
 		else $error("Expected Zero Flag Value: %d, Actual Zero Flag Value: %d, Info: %s", expectedZeroFlag, state.zFlag, text);
 	endtask
+	
+	task assertWithDuv(Prol16State state, int register, logic [15:0] cpuRegs [31:0], logic[15:0] cpuPc, logic cpuCFlag, logic cpuZFlag, string text);
+		assert (state.regs[register] == cpuRegs[register])
+		else $error("WithDuv: Expected Register Value: %d, Actual Register Value: %d, Info: %s", state.regs[register], cpuRegs[register], text);
+		
+		assert (state.programCounter == cpuPc)
+		else $error("WithDuv: Expected PC Value: %d, Actual PC Value: %d, Info: %s", state.programCounter, cpuPc, text);
+		
+		assert (state.cFlag == cpuCFlag)
+		else $error("WithDuv: Expected Carry Flag Value: %d, Actual Carry Flag Value: %d, Info: %s", state.cFlag, cpuCFlag, text);
+		
+		assert (state.zFlag == cpuZFlag)
+		else $error("WithDuv: Expected Zero Flag Value: %d, Actual Zero Flag Value: %d, Info: %s", state.zFlag, cpuZFlag, text);
+	endtask
 endclass
 
 class TestClassDuv;	
@@ -106,50 +120,118 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 	
 		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(0)", "/top/TheTest/cpuRegs(0)");
 		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(1)", "/top/TheTest/cpuRegs(1)");
-		// ...
-			
-		
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(2)", "/top/TheTest/cpuRegs(2)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(3)", "/top/TheTest/cpuRegs(3)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(4)", "/top/TheTest/cpuRegs(4)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(5)", "/top/TheTest/cpuRegs(5)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(6)", "/top/TheTest/cpuRegs(6)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(7)", "/top/TheTest/cpuRegs(7)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(8)", "/top/TheTest/cpuRegs(8)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(9)", "/top/TheTest/cpuRegs(9)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(10)", "/top/TheTest/cpuRegs(10)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(11)", "/top/TheTest/cpuRegs(11)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(12)", "/top/TheTest/cpuRegs(12)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(13)", "/top/TheTest/cpuRegs(13)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(14)", "/top/TheTest/cpuRegs(14)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(15)", "/top/TheTest/cpuRegs(15)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(16)", "/top/TheTest/cpuRegs(16)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(17)", "/top/TheTest/cpuRegs(17)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(18)", "/top/TheTest/cpuRegs(18)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(19)", "/top/TheTest/cpuRegs(19)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(20)", "/top/TheTest/cpuRegs(20)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(21)", "/top/TheTest/cpuRegs(21)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(22)", "/top/TheTest/cpuRegs(22)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(23)", "/top/TheTest/cpuRegs(23)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(24)", "/top/TheTest/cpuRegs(24)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(25)", "/top/TheTest/cpuRegs(25)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(26)", "/top/TheTest/cpuRegs(26)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(27)", "/top/TheTest/cpuRegs(27)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(28)", "/top/TheTest/cpuRegs(28)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(29)", "/top/TheTest/cpuRegs(29)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(30)", "/top/TheTest/cpuRegs(30)");
+		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(31)", "/top/TheTest/cpuRegs(31)");
+				
 		$init_signal_spy("/top/TheCpu/datapath_inst/RegPC", "/top/TheTest/cpuPc");
 		$init_signal_spy("/top/TheCpu/carry_out", "/top/TheTest/cpuCFlag");
-		$init_signal_spy("/top/TheCpu/zero", "/top/TheTest/cpuZFlag");
+		$init_signal_spy("/top/TheCpu/zero", "/top/TheTest/cpuZFlag");		
 		
-		
-		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(0)" , "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(0)", "16#0000", 0, 1);
 		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(1)", "16#0000", 0, 1);
-		// ...
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(2)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(3)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(4)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(5)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(6)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(7)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(8)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(9)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(10)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(11)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(12)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(13)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(14)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(15)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(16)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(17)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(18)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(19)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(20)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(21)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(22)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(23)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(24)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(25)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(26)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(27)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(28)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(29)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(30)", "16#0000", 0, 1);
+		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(31)", "16#0000", 0, 1);
 	
 		//Reset
 		model.reset();
-		testClass.assertWithoutFlags(0, 0, model.state, 12, "Reset test");
+		//testClass.assertWithoutFlags(0, 0, model.state, 12, "Reset test");
 		
 		// generate reset -----------------------------------------------------
-    rst = 1;
-    #10 rst = 0;
-    #20 rst = 1;
+		rst = 1;
+		#10 rst = 0;
+		#20 rst = 1;
 		  		
   		fork
   		  trigger(opcode);
 		join_none
-				
+
+		
 		//Nop
-		@(CommandStart);
-		  $display("testing nop");
-		  testClassDuv.assertWithoutFlags(0, 0, cpuRegs, cpuPc, 0, "Nop test"); // check first op
-		  model.execute(opcode_Nop);
-		  testClass.assertWithoutFlags(0, 1, model.state, 0, "Nop test");
-		  // TODO: compare both?
+		@(CommandStart);		
+		testClass.assertWithDuv(model.state, 12, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Reset test");
+		
+		//$display("testing nop");
+		//testClassDuv.assertWithoutFlags(0, 0, cpuRegs, cpuPc, 0, "Nop test"); // check first op
+				
+		model.execute(opcode_Nop);
+		//testClass.assertWithoutFlags(0, 1, model.state, 0, "Nop test");
+		// TODO: compare both?
 		  
 		
-		#20
-		opcode.cmd = And;
+		//#20
+		//opcode.cmd = And;
 				
+		opcode = opcode_Loadi;
 		@(CommandStart);
-		  $display("testing and");
-		  testClassDuv.assertWithoutFlags(0, 1, cpuRegs, cpuPc, 0, "Nop test"); // check second op
+		testClass.assertWithDuv(model.state, 0, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Nop test");
+		
+		//$display("testing and");
+		//testClassDuv.assertWithoutFlags(0, 1, cpuRegs, cpuPc, 0, "Nop test"); // check second op
 		  
 		
 		//Loadi
 		model.execute(opcode_Loadi);
+		
+		opcode = opcode_Loadi2;
+		@(CommandStart);
+		testClass.assertWithDuv(model.state, 3, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Loadi test 1");
+		
 		testClass.assertWithoutFlags(50, 3, model.state, 0, "Loadi test 1");
 		model.execute(opcode_Loadi2);
 		testClass.assertWithoutFlags(20, 5, model.state, 1, "Loadi test 2");
