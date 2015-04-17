@@ -8,3 +8,5 @@
 *.synctex
 work
 transcript
+*.hex
+*.wlf

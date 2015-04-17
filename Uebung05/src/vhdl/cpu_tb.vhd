@@ -32,7 +32,7 @@ use work.prol16_pack.all;
 entity cpu_tb is
   
   generic (
-    file_base_g : string := "ai");     -- file name base for ass/log/hex
+    file_base_g : string := "regressiontest");     -- file name base for ass/log/hex
 
 end cpu_tb;
 
