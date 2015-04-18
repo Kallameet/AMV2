@@ -24,14 +24,14 @@ endm
 macro flags_check_1
   loadi r4, check_z_1
   jumpc r4
-error_c_1:
-  loadi r5, error_c_1
+error_c_1_1:
+  loadi r5, error_c_1_1
   jump r5
 check_z_1:
   loadi r4, end_1
   jumpz r4
-error_z_1:
-  loadi r5, error_z_1
+error_z_1_1:
+  loadi r5, error_z_1_1
   jump r5
 end_1:
 endm
@@ -53,8 +53,8 @@ endm
 macro z_flag_check_1
   loadi r4, end_z_1
   jumpz r4
-error_z_1:
-  loadi r4, error_z_1
+error_z_1_2:
+  loadi r4, error_z_1_2
   jump r4
 end_z_1:
 endm
@@ -62,12 +62,22 @@ endm
 macro c_flag_check_1
   loadi r4, end_c_1
   jumpc r4
-error_c_1:
-  loadi r4, error_c_1
+error_c_1_2:
+  loadi r4, error_c_1_2
   jump r4
 end_c_1:
 endm
 
+macro z_flag_check_0
+  loadi r4, error_z_0
+  jumpz r4
+  loadi r4, end_z_0
+  jump r4
+error_z_0:
+  loadi r5, error_0
+  jump r5
+end_z_0:
+endm
 
 org data_start
 x : db 10
@@ -162,11 +172,11 @@ test_addc:
   addc r1, r1
   flags_check_0
   loadi r6, max
-  loadi r1, r6
+  load r1, r6
   inc r1 ; overflow
   loadi r1, 1
   addc r1, r1
-  loadi r2, 2
+  loadi r2, 3
   ; error check
   loadi r3, test_subc
   comp r1, r2
@@ -178,13 +188,13 @@ test_subc:
   inc r1 ; overflow
   loadi r1, 0  
   loadi r6, max
-  load r2, r6
   subc r1, r2
-  check_flags_1
+  ;flags_check_1
+  c_flag_check_1
   loadi r1, 3
   loadi r2, 1
   subc r1, r2
-  check_flags_0
+  flags_check_0
   loadi r6, max
   load r1, r6
   inc r1 ; overflow
@@ -200,10 +210,10 @@ test_subc:
 test_comp:
   loadi r1, 1
   comp r1, r1
-  check_flags_1
+  z_flag_check_1
   loadi r2, 2
   comp r1, r2
-  check_flags_0
+  z_flag_check_0
 
 test_and:
   loadi r1, 0
@@ -316,4 +326,3 @@ done:
   loadi r4, data_start
   write_mem_dump
   sleep
-
