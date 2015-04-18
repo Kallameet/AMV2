@@ -9,7 +9,6 @@ vcom -87 -coverAll ../src/vhdl/cpu.vhd
 vcom -87 -coverAll ../src/vhdl/cpu_tb.vhd
 
 vsim -gfile_base_g="regressiontest" -novopt -coverage cpu_tb
-do Wave.do
 run 200 us
 
 coverage report -file coverage.txt
