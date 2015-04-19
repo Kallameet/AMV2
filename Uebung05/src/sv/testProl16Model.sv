@@ -81,6 +81,34 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		end	
 	endtask
 	
+	covergroup CoverCpu @(posedge clk);
+		option.per_instance = 1;
+
+		cmd: coverpoint opcode.cmd;
+		
+		ra: coverpoint opcode.ra;
+		rb: coverpoint opcode.rb;
+		
+		crs_cmd_ra: cross cmd, ra;
+		crs_cmd_rb: cross cmd, rb;
+		
+		cFlag: coverpoint cpuCFlag {
+			bins set = {1};
+			bins notset = {0};
+		}
+		
+		zFlag: coverpoint cpuZFlag {
+			bins set = {1};
+			bins notset = {0};
+		}
+		
+		crs_cmd_c_0: cross cmd, cFlag.set;
+		crs_cmd_c_1: cross cmd, cFlag.notset;
+		crs_cmd_z_0: cross cmd, zFlag.set;
+		crs_cmd_z_1: cross cmd, zFlag.notset;
+		
+	endgroup
+	
 	initial begin : stimuli
 		Prol16State state = new();
 		Prol16Model#(32) model = new(state);
@@ -117,6 +145,7 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		Prol16Opcode opcode_Invalid = new(28, 29, Invalid, 0);
 		Prol16Opcode opcode_InvalidRegister = new(31, 32, Move, 0);
 	
+		CoverCpu coverCpu = new;
 	
 		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(0)", "/top/TheTest/cpuRegs(0)");
 		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(1)", "/top/TheTest/cpuRegs(1)");
