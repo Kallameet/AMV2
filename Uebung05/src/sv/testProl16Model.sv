@@ -81,10 +81,10 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		end	
 	endtask
 	
-	covergroup CoverCpu @(posedge clk);
+	covergroup CoverCpu @(posedge clk);  // TODO, clk the right signal?
 		option.per_instance = 1;
 
-		cmd: coverpoint opcode.cmd;
+		cmd: coverpoint opcode.cmd; // TODO: opcode from DUV
 		
 		ra: coverpoint opcode.ra;
 		rb: coverpoint opcode.rb;
@@ -102,10 +102,11 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 			bins notset = {0};
 		}
 		
-		crs_cmd_c_0: cross cmd, cFlag.set;
-		crs_cmd_c_1: cross cmd, cFlag.notset;
-		crs_cmd_z_0: cross cmd, zFlag.set;
-		crs_cmd_z_1: cross cmd, zFlag.notset;
+		crs_cmd_c: cross cmd, cFlag;
+		crs_cmd_z: cross cmd, zFlag;
+		
+		// TODO: cmd changes flags
+		// ...
 		
 	endgroup
 	
