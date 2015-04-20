@@ -1,4 +1,4 @@
-`include "testProl16Model.sv"
+`include "testProl16Rand.sv"
 
 module top;
 	logic clk = 0, rst;
