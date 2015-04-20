@@ -7,5 +7,5 @@ module top;
 	ifProl16 ifCpu();
 	cpu TheCpu(clk, rst, ifCpu.mem_addr, ifCpu.mem_data_cpu, ifCpu.mem_data_tb, ifCpu.mem_ce_n, ifCpu.mem_oe_n,
 			   ifCpu.mem_we_n, ifCpu.illegal_inst, ifCpu.cpu_halt);
-	testProl16Model TheTest(ifCpu.master, rst, clk);
+	testProl16Rand TheTest(ifCpu.master, rst, clk);
 endmodule
