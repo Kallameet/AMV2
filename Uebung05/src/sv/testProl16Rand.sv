@@ -62,14 +62,14 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
   		while (!End.triggered) begin
   		  @(negedge cpu.mem_oe_n)
 		  begin
-		    $display("negEdge oe");
+		    //$display("negEdge oe");
 			if (LoadiOccurred == 0)
 			begin
 				cpu.mem_data_tb[15:10] <= opcode.cmd;
 				cpu.mem_data_tb[9:5] <= opcode.ra;
 				cpu.mem_data_tb[4:0] <= opcode.rb;	 
 	      
-	      prevOpcodeDUV <= opcodeDUV;
+	      			prevOpcodeDUV <= opcodeDUV;
 				
 				if (opcode.cmd == Loadi) 
 				begin					
@@ -84,7 +84,7 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 		  end
 		  @(posedge cpu.mem_oe_n)
 		  begin
-		    $display("posEdge oe");
+		    //$display("posEdge oe");
 			-> CommandStart;
 		  end
 		end	
@@ -98,6 +98,34 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 		option.per_instance = 1;
 
 		cmd: coverpoint opcodeDUV {
+      bins NOP   = {0};
+      bins SLEEP = {1};
+      bins LOADI = {2};
+      bins LOAD  = {3};
+      bins STORE = {4};
+      bins JUMP  = {8};
+      bins JUMPC = {10};
+      bins JUMPZ = {11};
+      bins MOVE  = {12};
+      bins AND   = {16};
+      bins OR    = {17};
+      bins XOR   = {18};
+      bins NOT   = {19};
+      bins ADD   = {20};
+      bins ADDC  = {21};
+      bins SUB   = {22};
+      bins SUBC  = {23};
+      bins COMP  = {24};
+      bins INC   = {26};
+      bins DEC   = {27};
+      bins SHL   = {28};
+      bins SHR   = {29};
+      bins SHLC  = {30};
+      bins SHRC  = {31};
+      illegal_bins other = default;
+    }
+		
+		prevCmd: coverpoint prevOpcodeDUV {
       bins NOP   = {0};
       bins SLEEP = {1};
       bins LOADI = {2};
@@ -147,19 +175,35 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 		trans_c: coverpoint cpuCFlag {
       bins from_0_to_1 = (0 => 1);
       bins from_1_to_0 = (1 => 0);
-      bins from_1_to_1 = (1 => 1);
       bins from_0_to_0 = (0 => 0);
+      bins from_1_to_1 = (1 => 1);
     }
 		
 		trans_z: coverpoint cpuZFlag {
       bins from_0_to_1 = (0 => 1);
       bins from_1_to_0 = (1 => 0);
-      bins from_1_to_1 = (1 => 1);
       bins from_0_to_0 = (0 => 0);
+      bins from_1_to_1 = (1 => 1);
     }
 		
-		crs_cmd_c_change: cross prevOpcodeDUV, trans_c;
-		crs_cmd_z_change: cross prevOpcodeDUV, trans_z;
+		prevCmdChangeFlags: coverpoint prevOpcodeDUV {
+      bins doesnt_change_flags = { 0, 1, 2, 3, 4, 8, 10, 11, 12};
+      bins c_flag_0_and_z_flag_x = { 16, 17, 18, 19 };
+      bins c_flag_x_and_z_flag_x = { 20, 21, 22, 23, 24, 26, 27, 28, 29, 30, 31 };
+    }
+		
+		crs_cmd_c_change: cross prevCmdChangeFlags, trans_c {
+      illegal_bins ill = binsof(prevCmdChangeFlags.doesnt_change_flags) && (binsof(trans_c.from_0_to_1) || binsof(trans_c.from_1_to_0));
+      
+    }
+			
+		crs_cmd_z_change: cross prevCmdChangeFlags, trans_z {
+      illegal_bins ill = binsof(prevCmdChangeFlags.doesnt_change_flags) && (binsof(trans_z.from_0_to_1) || binsof(trans_z.from_1_to_0));
+    }
+    
+    crs_cmd_c_is_0: cross prevCmdChangeFlags, trans_c {
+      illegal_bins ill = binsof(prevCmdChangeFlags.c_flag_0_and_z_flag_x) && (binsof(trans_c.from_0_to_1) || binsof(trans_c.from_1_to_0) || binsof(trans_c.from_1_to_1));
+    }
 		
 	endgroup
 	
@@ -267,8 +311,8 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 		  model.execute(opcode);
 		  opcode.randomize();
 			@(CommandStart);
-			$display("Command %b", opcodeDUV);
-			testClass.assertWithDuv(model.state, opcode.ra, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, opcode.cmd);		
+			//$display("Command %b", opcodeDUV);
+			//testClass.assertWithDuv(model.state, opcode.ra, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, opcode.cmd);		
 		end
 		
 		-> End;
