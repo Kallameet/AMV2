@@ -47,7 +47,9 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 	logic [4:0] ra;
 	logic [4:0] rb;
 	
-	const int numTestCases = 1000;
+	logic [5:0] prevOpcodeDUV;
+	
+	const int numTestCases = 100;
 	
 	event CommandStart;
 	event End;
@@ -66,7 +68,9 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 				cpu.mem_data_tb[15:10] <= opcode.cmd;
 				cpu.mem_data_tb[9:5] <= opcode.ra;
 				cpu.mem_data_tb[4:0] <= opcode.rb;	 
-	
+	      
+	      prevOpcodeDUV <= opcodeDUV;
+				
 				if (opcode.cmd == Loadi) 
 				begin					
 					LoadiOccurred = 1;
@@ -85,6 +89,10 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 		  end
 		end	
 	endtask
+	
+	//always_ff @(negedge clk) begin
+  //  previous_opcode <= opcode;
+  //end
 	
 	covergroup CoverCpu @(negedge cpu.mem_oe_n);  // TODO, the right signal?
 		option.per_instance = 1;
@@ -136,8 +144,22 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 		crs_cmd_c: cross cmd, cFlag;
 		crs_cmd_z: cross cmd, zFlag;
 		
-		// TODO: cmd changes flags
-		// ...
+		trans_c: coverpoint cpuCFlag {
+      bins from_0_to_1 = (0 => 1);
+      bins from_1_to_0 = (1 => 0);
+      bins from_1_to_1 = (1 => 1);
+      bins from_0_to_0 = (0 => 0);
+    }
+		
+		trans_z: coverpoint cpuZFlag {
+      bins from_0_to_1 = (0 => 1);
+      bins from_1_to_0 = (1 => 0);
+      bins from_1_to_1 = (1 => 1);
+      bins from_0_to_0 = (0 => 0);
+    }
+		
+		crs_cmd_c_change: cross prevOpcodeDUV, trans_c;
+		crs_cmd_z_change: cross prevOpcodeDUV, trans_z;
 		
 	endgroup
 	
