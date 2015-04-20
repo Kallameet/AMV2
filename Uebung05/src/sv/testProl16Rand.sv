@@ -69,7 +69,7 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 				cpu.mem_data_tb[9:5] <= opcode.ra;
 				cpu.mem_data_tb[4:0] <= opcode.rb;	 
 	      
-	      			prevOpcodeDUV <= opcodeDUV;
+	      prevOpcodeDUV <= opcodeDUV;
 				
 				if (opcode.cmd == Loadi) 
 				begin					
@@ -97,7 +97,7 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 	covergroup CoverCpu @(negedge cpu.mem_oe_n);  // TODO, the right signal?
 		option.per_instance = 1;
 
-		cmd: coverpoint opcodeDUV {
+		cmd: coverpoint opcodeDUV iff (rst) {
       bins NOP   = {0};
       bins SLEEP = {1};
       bins LOADI = {2};
@@ -122,10 +122,11 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
       bins SHR   = {29};
       bins SHLC  = {30};
       bins SHRC  = {31};
+      bins Invalid = {63};
       illegal_bins other = default;
     }
 		
-		prevCmd: coverpoint prevOpcodeDUV {
+		prevCmd: coverpoint prevOpcodeDUV iff (rst) {
       bins NOP   = {0};
       bins SLEEP = {1};
       bins LOADI = {2};
@@ -150,7 +151,8 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
       bins SHR   = {29};
       bins SHLC  = {30};
       bins SHRC  = {31};
-      illegal_bins other = default;
+      bins Invalid = {63};
+      //illegal_bins other = default;
     }
 		
 		ra: coverpoint ra;
@@ -202,7 +204,7 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
     }
     
     crs_cmd_c_is_0: cross prevCmdChangeFlags, trans_c {
-      illegal_bins ill = binsof(prevCmdChangeFlags.c_flag_0_and_z_flag_x) && (binsof(trans_c.from_0_to_1) || binsof(trans_c.from_1_to_0) || binsof(trans_c.from_1_to_1));
+      illegal_bins ill = binsof(prevCmdChangeFlags.c_flag_0_and_z_flag_x) && (binsof(trans_c.from_0_to_1) || binsof(trans_c.from_1_to_1));
     }
 		
 	endgroup
@@ -310,9 +312,10 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 		for (int i = 0; i < numTestCases; i++) begin
 		  model.execute(opcode);
 		  opcode.randomize();
+		  $display("Command %b", opcode.cmd);
+		  $display("CommandDUV %b", opcodeDUV);
 			@(CommandStart);
-			//$display("Command %b", opcodeDUV);
-			//testClass.assertWithDuv(model.state, opcode.ra, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, opcode.cmd);		
+			testClass.assertWithDuv(model.state, opcode.ra, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, opcode.cmd);		
 		end
 		
 		-> End;
