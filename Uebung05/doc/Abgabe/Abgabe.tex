@@ -61,36 +61,47 @@ title=\lstname %zeigt titel der datei an
 %Angabe
 \includepdf[pages=-]{../Angabe.pdf}
 
-\section{Beantwortung der Fragen}
+\section{Beispiel 1}
+\subsection{Beantwortung der Fragen}
 Statement Coverage: Liefert Information darüber welche Zeilen/Statements des Codes ausgeführt wurden.
 
-Path Coverage: Ist eine Erweiterung der Branch Coverage. Überprüft alle möglichen Kombinationen von Branches. Zum Beispiel bei zwei if-Anweisungen: true+true, false+true, true+false, false+false
+Path Coverage: Ist eine Erweiterung der Branch Coverage. Überprüft alle möglichen Kombinationen von Branches. Zum Beispiel bei zwei if-Anweisungen: true+true, false+true, true+false, false+false.
 
 Expression Coverage: Überprüft die mögliche Werte bei einer Zuweisung und zählt mit wie oft welcher Wert zugewiesen wird. Bei einer logischen Zuweisung werden auch innere Ausdrücke betrachtet.
 
 FSM Coverage: Gibt von einer FSM an wie oft jeder Zustand besucht wurde und wie oft jede einzele Transition ausgeführt wurde.
 
-Hardware-Entwurf: %TODO Default Statements werden nicht gecovert.
+Hardware-Entwurf: Nein, das Problem sind z.B. die default-Zweige. Diese können dann gegebenenfalls bei der Coverage ignoriert werden.
 
 Code Coverage: Nein, Code Coverage heißt nur, dass der Code ausgeführt wurde, aber nicht, dass er fehlerfrei ist.
 
-\section{Testfälle}
+\subsection{Coverage Report}
 
+Lücken: 
+\begin{itemize}
+	\item Register Index = -1	-> einfach Register > 32 nehmen
+	\item Register Decode Error -> siehe Register Index
+	\item Falscher Opcode -> kommt darauf an ob eine falscher Opcode in das Memory geladen werden
+\end{itemize}
 
-\section{Source Code}
+\lstinputlisting{\simpath/coverage.txt}
 
-%Der Sourcecode des Prol16 wurde nicht hinzugefügt, da der von der Elearning Plattform verwendet wurde.
-%
-%\lstinputlisting[language={verilog}]{\srcpath/sv/ifProl16.sv}
-%\lstinputlisting[language={verilog}]{\srcpath/sv/pkgProl16.sv}
-%\lstinputlisting[language={verilog}]{\srcpath/sv/Prol16Command.sv}
-%\lstinputlisting[language={verilog}]{\srcpath/sv/Prol16Opcode.sv}
-%\lstinputlisting[language={verilog}]{\srcpath/sv/Prol16State.sv}
-%\lstinputlisting[language={verilog}]{\srcpath/sv/Prol16Model.sv}
+\subsection{Source Code}
+
+Der Sourcecode des Prol16 wurde nicht hinzugefügt, da der von der Elearning Plattform verwendet wurde.
+
+\lstinputlisting[language={verilog}]{\srcpath/sv/ifProl16.sv}
+\lstinputlisting[language={verilog}]{\srcpath/sv/pkgProl16.sv}
+\lstinputlisting[language={verilog}]{\srcpath/sv/Prol16Command.sv}
+\lstinputlisting[language={verilog}]{\srcpath/sv/Prol16Opcode.sv}
+\lstinputlisting[language={verilog}]{\srcpath/sv/Prol16State.sv}
+\lstinputlisting[language={verilog}]{\srcpath/sv/Prol16Model.sv}
 %\lstinputlisting[language={verilog}]{\srcpath/sv/testProl16Model.sv}
-%\lstinputlisting[language={verilog}]{\srcpath/sv/top.sv}
-%
-%\lstinputlisting[language={tcl}]{\simpath/Compile.do}
-%\lstinputlisting[language={tcl}]{\simpath/Sim.do}
+\lstinputlisting[language={verilog}]{\srcpath/sv/testProl16Rand.sv}
+\lstinputlisting[language={verilog}]{\srcpath/sv/top.sv}
+
+\lstinputlisting[language={tcl}]{\simpath/CompileSimRandCov.do}
+
+\section{Beispiel 2}
 
 \end{document}
