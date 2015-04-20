@@ -84,7 +84,18 @@ Lücken:
 	\item Falscher Opcode -> kommt darauf an ob eine falscher Opcode in das Memory geladen werden
 \end{itemize}
 
+
+Coverage tcl-File:
+\lstinputlisting{\simpath/ComSimRegressionCoverage.tcl}
+
+Textdatei mit Coverage Report:
 \lstinputlisting{\simpath/coverage.txt}
+
+Assemblercode:
+\lstinputlisting[language={verilog}]{\simpath/regressiontest.ass}
+
+
+\section{Beispiel 2}
 
 \subsection{Source Code}
 
@@ -101,7 +112,5 @@ Der Sourcecode des Prol16 wurde nicht hinzugefügt, da der von der Elearning Pla
 \lstinputlisting[language={verilog}]{\srcpath/sv/top.sv}
 
 \lstinputlisting[language={tcl}]{\simpath/CompileSimRandCov.do}
-
-\section{Beispiel 2}
 
 \end{document}
