@@ -20,6 +20,6 @@ typedef enum bit [5:0]
 		Shl=6'b011100,
 		Shr=6'b011101,
 		Shlc=6'b011110,
-		Shrc=6'b011111,
-		Invalid=6'b111111
+		Shrc=6'b011111
+		//Invalid=6'b111111
 	} Prol16Command;
