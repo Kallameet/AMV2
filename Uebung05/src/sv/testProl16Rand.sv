@@ -23,36 +23,38 @@ class TestClass;
 		else $error("Expected Zero Flag Value: %d, Actual Zero Flag Value: %d, Info: %s", expectedZeroFlag, state.zFlag, text);
 	endtask
 	
-	task assertWithDuv(Prol16State state, int register, logic [15:0] cpuRegs [31:0], logic[15:0] cpuPc, logic cpuCFlag, logic cpuZFlag, string text);
+	task assertWithDuv(Prol16State state, int register, logic [15:0] cpuRegs [31:0], logic[15:0] cpuPc, logic cpuCFlag, logic cpuZFlag, Prol16Command cmd);
 		assert (state.regs[register] == cpuRegs[register])
-		else $error("WithDuv: Expected Register Value: %d, Actual Register Value: %d, Info: %s", state.regs[register], cpuRegs[register], text);
+		else $error("WithDuv: Expected Register Value: %d, Actual Register Value: %d, Info: %s", state.regs[register], cpuRegs[register], cmd.name());
 		
 		assert (state.programCounter == cpuPc)
-		else $error("WithDuv: Expected PC Value: %d, Actual PC Value: %d, Info: %s", state.programCounter, cpuPc, text);
+		else $error("WithDuv: Expected PC Value: %d, Actual PC Value: %d, Info: %s", state.programCounter, cpuPc, cmd.name());
 		
 		assert (state.cFlag == cpuCFlag)
-		else $error("WithDuv: Expected Carry Flag Value: %d, Actual Carry Flag Value: %d, Info: %s", state.cFlag, cpuCFlag, text);
+		else $error("WithDuv: Expected Carry Flag Value: %d, Actual Carry Flag Value: %d, Info: %s", state.cFlag, cpuCFlag, cmd.name());
 		
 		assert (state.zFlag == cpuZFlag)
-		else $error("WithDuv: Expected Zero Flag Value: %d, Actual Zero Flag Value: %d, Info: %s", state.zFlag, cpuZFlag, text);
+		else $error("WithDuv: Expected Zero Flag Value: %d, Actual Zero Flag Value: %d, Info: %s", state.zFlag, cpuZFlag, cmd.name());
 	endtask
 endclass
 
-program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
+program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 	logic [15:0] cpuRegs [31:0];
 	logic [15:0] cpuPc;
 	logic cpuCFlag;
 	logic cpuZFlag;
-	logic opcodeDUV;
-	logic ra;
-	logic rb;
+	logic [5:0] opcodeDUV;
+	logic [4:0] ra;
+	logic [3:0] rb;
 	
-	const int numTestCases = 100;
+	const int numTestCases = 1000;
 	
 	event CommandStart;
 	event End;
 	
 	bit LoadiOccurred = 0;
+	
+	Prol16Opcode opcode = new(0, 0, Nop, 0);
 	
 	task trigger();
   		while (!End.triggered) begin
@@ -84,10 +86,36 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		end	
 	endtask
 	
-	covergroup CoverCpu @(posedge clk);  // TODO, clk the right signal?
+	covergroup CoverCpu @(negedge cpu.mem_oe_n);  // TODO, the right signal?
 		option.per_instance = 1;
 
-		cmd: coverpoint opcodeDUV;
+		cmd: coverpoint opcodeDUV {
+      bins NOP   = {0};
+      bins SLEEP = {1};
+      bins LOADI = {2};
+      bins LOAD  = {3};
+      bins STORE = {4};
+      bins JUMP  = {8};
+      bins JUMPC = {10};
+      bins JUMPZ = {11};
+      bins MOVE  = {12};
+      bins AND   = {16};
+      bins OR    = {17};
+      bins XOR   = {18};
+      bins NOT   = {19};
+      bins ADD   = {20};
+      bins ADDC  = {21};
+      bins SUB   = {22};
+      bins SUBC  = {23};
+      bins COMP  = {24};
+      bins INC   = {26};
+      bins DEC   = {27};
+      bins SHL   = {28};
+      bins SHR   = {29};
+      bins SHLC  = {30};
+      bins SHRC  = {31};
+      illegal_bins other = default;
+    }
 		
 		ra: coverpoint ra;
 		rb: coverpoint rb;
@@ -120,8 +148,6 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		TestClass testClass = new();
 	
 		CoverCpu coverCpu = new;
-		
-		Prol16Opcode opcode = new(0, 0, Nop, 0);
 	
 		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(0)", "/top/TheTest/cpuRegs(0)");
 		$init_signal_spy("/top/TheCpu/datapath_inst/thereg_file/registers(1)", "/top/TheTest/cpuRegs(1)");
@@ -196,25 +222,32 @@ program testProl16Model(ifProl16.master cpu, output logic rst, input logic clk);
 		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(30)", "16#0000", 0, 1);
 		$signal_force("/top/TheCpu/datapath_inst/thereg_file/registers(31)", "16#0000", 0, 1);
 	
-		//Reset
-		model.reset();
-		//testClass.assertWithoutFlags(0, 0, model.state, 12, "Reset test");
 		
 		// generate reset -----------------------------------------------------
 		rst = 1;
 		#10 rst = 0;
 		#20 rst = 1;
+		
+		//Reset
+		model.reset();
+		//testClass.assertWithoutFlags(0, 0, model.state, 12, "Reset test");
 		  		
   		fork
   		  trigger();
 		join_none
 
-		for (int i = 0; i < numTestCases; i++) {
-			opcode.randomize();
-			@(CommandStart);		
-			testClass.assertWithDuv(model.state, opcode.ra, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, "Random test " + i);
-			model.execute(opcode);			
-		}
+    //Nop
+		@(CommandStart);		
+		testClass.assertWithDuv(model.state, 12, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, opcode.cmd);
+
+ 			
+		for (int i = 0; i < numTestCases; i++) begin
+		  model.execute(opcode);
+		  opcode.randomize();
+			@(CommandStart);
+			$display("Command %b", opcodeDUV);
+			testClass.assertWithDuv(model.state, opcode.ra, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, opcode.cmd);		
+		end
 		
 		-> End;
 		$stop;
