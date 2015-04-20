@@ -1,6 +1,6 @@
 class Prol16State #(parameter int gRegs = 32);
 	pkgProl16::data_v regs[gRegs];
-	int programCounter;
+	pkgProl16::data_v programCounter;
 	bit cFlag;
 	bit zFlag;
 	

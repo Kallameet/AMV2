@@ -49,7 +49,7 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 	
 	logic [5:0] prevOpcodeDUV;
 	
-	const int numTestCases = 100;
+	const int numTestCases = 100000;
 	
 	event CommandStart;
 	event End;
@@ -99,10 +99,10 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 
 		cmd: coverpoint opcodeDUV iff (rst) {
       bins NOP   = {0};
-      bins SLEEP = {1};
+      ignore_bins SLEEP = {1};
       bins LOADI = {2};
-      bins LOAD  = {3};
-      bins STORE = {4};
+      ignore_bins LOAD  = {3};
+      ignore_bins STORE = {4};
       bins JUMP  = {8};
       bins JUMPC = {10};
       bins JUMPZ = {11};
@@ -128,10 +128,10 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 		
 		prevCmd: coverpoint prevOpcodeDUV iff (rst) {
       bins NOP   = {0};
-      bins SLEEP = {1};
+      ignore_bins SLEEP = {1};
       bins LOADI = {2};
-      bins LOAD  = {3};
-      bins STORE = {4};
+      ignore_bins LOAD  = {3};
+      ignore_bins STORE = {4};
       bins JUMP  = {8};
       bins JUMPC = {10};
       bins JUMPZ = {11};
@@ -310,10 +310,14 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 
  			
 		for (int i = 0; i < numTestCases; i++) begin
+		  if (opcode.cmd == Loadi) 
+		  begin					
+			  @(CommandStart);
+		  end
 		  model.execute(opcode);
 		  opcode.randomize();
-		  $display("Command %b", opcode.cmd);
-		  $display("CommandDUV %b", opcodeDUV);
+		  //$display("Command %b", opcode.cmd);
+		  //$display("CommandDUV %b", opcodeDUV);
 			@(CommandStart);
 			testClass.assertWithDuv(model.state, opcode.ra, cpuRegs, cpuPc, cpuCFlag, cpuZFlag, opcode.cmd);		
 		end
