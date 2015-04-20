@@ -45,7 +45,7 @@ program testProl16Rand(ifProl16.master cpu, output logic rst, input logic clk);
 	logic cpuZFlag;
 	logic [5:0] opcodeDUV;
 	logic [4:0] ra;
-	logic [3:0] rb;
+	logic [4:0] rb;
 	
 	const int numTestCases = 1000;
 	
