@@ -12,7 +12,7 @@
 \usepackage{verbatim}
 
 
-
+\usepackage{pgfplots}
 
  \usepackage{mathptmx}
  \usepackage[scaled=.90]{helvet}
@@ -43,6 +43,20 @@ title=\lstname %zeigt titel der datei an
 \usepackage{pdfpages} % fuer pdfs
 \usepackage{hyperref} % fuer url
 
+%\usepackage{filecontents}
+%\begin{filecontents*}{data.csv}
+%1,15
+%10,52.3
+%50,72.8
+%100,78.4
+%500,87.7
+%1000,90.1
+%5000,95
+%10000,95.2
+%100000,95.2
+%1000000,95.2
+%\end{filecontents*}
+
 
 %keine einrückungen bei absatz
 \parindent 0pt
@@ -68,6 +82,7 @@ title=\lstname %zeigt titel der datei an
 \subsection{Diagramm}
 
 \begin{table}[H]
+\centering
 \begin{tabular}{|l|l|}
 \hline
 Anzahl  & Coverage (\%) \\ \hline
@@ -82,7 +97,18 @@ Anzahl  & Coverage (\%) \\ \hline
 100000  & 95.2 \\ \hline
 1000000 & 95.2 \\ \hline
 \end{tabular}
+\caption{Coverage Tabelle}
 \end{table}
+
+\begin{figure}[ht!]
+\centering
+	\begin{tikzpicture}
+		\begin{axis}[xlabel=Anzahl Testfälle, ylabel=Coverage in \%, xmode=log, width=\textwidth]
+			\addplot table[col sep=comma, mark=none] {TestabdeckungWerte.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Coverage Graph \label{overflow}}
+\end{figure}
 
 \subsection{Beantwortung der Fragen}
 
@@ -111,14 +137,17 @@ constraint nop_0 {
 				Befehle, Carry Flag 0 und Z Flag beeinflussen: 4\\
 				
 				Berechnung:\\
-				keine Flags: 6 * 4 = 24
-				Flags: 11 * 4 * 4 = 176
-				Carry Flag 0: 4 * 4 * 2 = 32
-				Summe: 232
+				keine Flags: 6 * 4 = 24 \\
+				Flags: 11 * 4 * 4 = 176 \\
+				Carry Flag 0: 4 * 4 * 2 = 32 \\
+				Summe: 232 \\
 				
-				%TODO: Test aus der Übung Frage
+				Test aus der Übung: Der Test braucht ca. 5000 Kombinationen, dann ist die maximale Coverage erreicht. Die Redundanz tritt auf, da mehrere Register verwendet werden und dadurch sehr spezielle Kombinationen von Befehlen ausgeführt werden müssen um alle Tests zu covern. Zum Beispiel müssen für ein ADDC sehr spezielle Werte vorhanden sein, damit dieser das Zero und Carry Flag setzt.
+				
+				
 \end{itemize}
 
+\newpage
 \subsection{Source Code}
 
 Der Sourcecode des Prol16 wurde nicht hinzugefügt, da der von der Elearning Plattform verwendet wurde.
@@ -135,6 +164,19 @@ Der Sourcecode des Prol16 wurde nicht hinzugefügt, da der von der Elearning Pla
 
 \lstinputlisting[language={tcl}]{\simpath/CompileSimRandCov.do}
 
-\subsection{Beispiel 2}
+\newpage
+\section{Beispiel 2}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=\textwidth]{1.jpg}
+\caption{LTS}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=\textwidth]{2.jpg}
+\caption{Kripke}
+\end{figure}
 
 \end{document}
