@@ -22,6 +22,8 @@
 
 \usepackage{listings}
 \usepackage{color}
+
+\usepackage{float}
  
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -64,15 +66,29 @@ title=\lstname %zeigt titel der datei an
 \section{Beispiel 1}
 
 \subsection{Diagramm}
-%TODO
 
+\begin{table}[H]
+\begin{tabular}{|l|l|}
+\hline
+Anzahl  & Coverage (\%) \\ \hline
+1       & 15   \\ \hline
+10      & 52.3 \\ \hline
+50      & 72.8 \\ \hline
+100     & 78.4 \\ \hline
+500     & 87.7 \\ \hline
+1000    & 90.1 \\ \hline
+5000    & 95   \\ \hline
+10000   & 95.2 \\ \hline
+100000  & 95.2 \\ \hline
+1000000 & 95.2 \\ \hline
+\end{tabular}
+\end{table}
 
 \subsection{Beantwortung der Fragen}
 
 \begin{itemize}
-	\item Randomisierte Werte sind nicht vorhersehbar. Es würden nur alle Fälle abgedeckt werden können, wenn unendlich viele Tests ausgeführt werden würden, was in der realen Welt nicht möglich ist.
-	Bei vorhersehbaren Werten würde man sichergehen können, dass auch Cornercases getestet werden.
-	\item Wurzelfunktion/Logarithmus (?). Je mehr Kombinationen ausgeführt werden desto geringer ist die Chance, dass eine Kombinationen ausgeführt wird, die noch nicht ausgeführt wurde.
+	\item Randomisierte Werte sind vorhersehbar, weil der Randomgenerator einen Seed hat. Die Testfälle sind dadurch reproduzierbar.
+	\item Logarithmische Funktion. Je mehr Kombinationen ausgeführt werden desto geringer ist die Chance, dass eine Kombinationen ausgeführt wird, die noch nicht ausgeführt wurde bzw. sind ab einem bestimmten Zeitpunkt alle möglichen Kombinationen ausgeführt worden.
 	\item
 				\begin{lstlisting}[numbers=none]
 constraint ra_0 {
