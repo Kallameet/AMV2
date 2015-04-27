@@ -1,0 +1,328 @@
+;; registers:
+;; r0     is always 0
+;; r1-r3  won't be changed during sub calls
+;; r4, r5 hold sub parameters
+;; r6, r7 are temp registers
+
+equ prog_start, 0000h ; start address of program rom
+equ data_start, 8000h ; start address of data ram
+equ mem_dump_addr, 0ffffh
+
+
+macro write_mem_dump
+  loadi r6, mem_dump_addr 
+  store r4, r6            ; dump memory to file
+endm
+
+macro error_check
+  jumpz r3
+error_loop:
+  loadi r5, error_loop
+  jump r5
+endm
+
+macro flags_check_1
+  loadi r4, check_z_1
+  jumpc r4
+error_c_1_1:
+  loadi r5, error_c_1_1
+  jump r5
+check_z_1:
+  loadi r4, end_1
+  jumpz r4
+error_z_1_1:
+  loadi r5, error_z_1_1
+  jump r5
+end_1:
+endm
+
+macro flags_check_0
+  loadi r4, error_0
+  jumpc r4
+check_z_0:
+  loadi r4, error_0
+  jumpz r4
+  loadi r4, end_0
+  jump r4
+error_0:
+  loadi r5, error_0
+  jump r5
+end_0:
+endm
+
+macro z_flag_check_1
+  loadi r4, end_z_1
+  jumpz r4
+error_z_1_2:
+  loadi r4, error_z_1_2
+  jump r4
+end_z_1:
+endm
+
+macro c_flag_check_1
+  loadi r4, end_c_1
+  jumpc r4
+error_c_1_2:
+  loadi r4, error_c_1_2
+  jump r4
+end_c_1:
+endm
+
+macro z_flag_check_0
+  loadi r4, error_z_0
+  jumpz r4
+  loadi r4, end_z_0
+  jump r4
+error_z_0:
+  loadi r5, error_0
+  jump r5
+end_z_0:
+endm
+
+org data_start
+x : db 10
+store_x : db 0
+max : db 65535
+max_h : db 32768
+
+org prog_start
+  loadi r0, 0
+
+test_move:
+  loadi r6, x
+  load r1, r6
+  move r2, r1
+  ; error check
+  loadi r3, test_inc
+  ; loadi r2, 0 ; check the error check
+  comp r1, r2
+  error_check
+
+test_inc:
+  loadi r6, max
+  load r1, r6
+  loadi r2, 1
+  add r2, r1 ; use add to compare
+  inc r1
+  flags_check_1
+  inc r1
+  inc r2
+  flags_check_0
+  ; error check
+  loadi r3, test_add
+  comp r1, r2
+  error_check
+
+test_add:
+  loadi r6, max_h
+  load r1, r6
+  add r1, r1
+  flags_check_1
+  loadi r2, 1
+  add r1, r2
+  flags_check_0
+  ; error check
+  loadi r3, test_sub
+  comp r1, r2
+  error_check
+
+test_sub:
+  loadi r1, 0
+  loadi r6, max
+  load r2, r6
+  sub r1, r2
+  c_flag_check_1
+  loadi r2, 1
+  sub r1, r2
+  z_flag_check_1
+  loadi r1, 2
+  loadi r2, 1
+  sub r1, r2
+  flags_check_0
+  ; error check
+  loadi r3, test_dec
+  comp r1, r2
+  error_check
+
+test_dec:
+  loadi r1, 0
+  dec r1
+  c_flag_check_1
+  loadi r1, 1
+  dec r1
+  z_flag_check_1
+  loadi r1, 2
+  dec r1
+  flags_check_0
+  ; error check
+  loadi r3, test_addc
+  loadi r2, 1
+  comp r1, r2
+  error_check
+
+test_addc:
+  loadi r6, max
+  load r1, r6
+  inc r1 ; overflow
+  loadi r6, max
+  load r1, r6
+  addc r1, r0
+  flags_check_1
+  loadi r1, 1
+  addc r1, r1
+  flags_check_0
+  loadi r6, max
+  load r1, r6
+  inc r1 ; overflow
+  loadi r1, 1
+  addc r1, r1
+  loadi r2, 3
+  ; error check
+  loadi r3, test_subc
+  comp r1, r2
+  error_check
+
+test_subc:
+  loadi r6, max
+  load r1, r6
+  inc r1 ; overflow
+  loadi r1, 0  
+  loadi r6, max
+  subc r1, r2
+  ;flags_check_1
+  c_flag_check_1
+  loadi r1, 3
+  loadi r2, 1
+  subc r1, r2
+  flags_check_0
+  loadi r6, max
+  load r1, r6
+  inc r1 ; overflow
+  loadi r1, 3
+  loadi r2, 1
+  subc r1, r2
+  ; error check
+  loadi r3, test_comp
+  loadi r2, 1
+  comp r1, r2
+  error_check
+
+test_comp:
+  loadi r1, 1
+  comp r1, r1
+  z_flag_check_1
+  loadi r2, 2
+  comp r1, r2
+  z_flag_check_0
+
+test_and:
+  loadi r1, 0
+  and r1, r1
+  z_flag_check_1
+  loadi r1, 1
+  and r1, r1
+  flags_check_0
+  and r1, r0
+  ; error check
+  loadi r3, test_or
+  comp r1, r0
+  error_check
+
+test_or:
+  loadi r1, 0
+  or r1, r1
+  z_flag_check_1
+  loadi r1, 1
+  or r1, r0
+  flags_check_0
+  ; error check
+  loadi r3, test_xor
+  loadi r2, 1
+  comp r1, r2
+  error_check
+
+test_xor:
+  loadi r1, 0
+  xor r1, r1
+  z_flag_check_1
+  loadi r2, 1
+  xor r1, r2
+  flags_check_0
+  ; error check
+  loadi r3, test_not
+  comp r1, r2
+  error_check
+
+test_not:
+  move r1, r0
+  not r1
+  flags_check_0
+  not r1
+  z_flag_check_1
+
+test_shl:
+  loadi r6, max_h
+  load r1, r6
+  shl r1
+  flags_check_1
+  loadi r1, 1
+  shl r1
+  flags_check_0
+
+test_shr:
+  loadi r1, 1
+  shr r1
+  flags_check_1
+  loadi r6, max_h
+  load r1, r6
+  shr r1
+  flags_check_0
+
+test_shlc:
+  add r0, r0 ; carry = 0
+  loadi r6, max_h
+  load r1, r6
+  shlc r1
+  flags_check_1
+  loadi r6, max
+  load r1, r6
+  add r1, r1 ; carry = 1
+  move r1, r0
+  shlc r1
+  flags_check_0
+
+test_shrc:
+  add r0, r0 ; carry = 0
+  loadi r1, 1
+  shrc r1
+  flags_check_1
+  loadi r6, max
+  load r1, r6
+  add r1, r1 ; carry = 1
+  move r1, r0
+  shrc r1
+  flags_check_0
+
+test_store:
+  loadi r6, x
+  load r1, r6
+  loadi r6, store_x
+  store r1, r6
+  loadi r6, x
+  load r1, r6
+  loadi r6, store_x
+  load r2, r6
+  ; error check
+  loadi r3, test_nop
+  comp r1, r2
+  error_check
+
+test_nop:
+  nop
+  nop
+
+    ;; stop simulation
+done:
+  loadi r4, data_start
+  write_mem_dump
+  sleep
