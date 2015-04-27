@@ -46,7 +46,7 @@ title=\lstname %zeigt titel der datei an
 \parindent 0pt
 
 \begin{document}
-\title{Übung 05}
+\title{Übung 06}
 \author{Reinhard Penn, Bernhard Selymes}
 \date{April 2015}
 
@@ -54,7 +54,7 @@ title=\lstname %zeigt titel der datei an
 
 %Beginn des Dokuments
 
-\newcommand{\Uebung}{Coverage}
+\newcommand{\Uebung}{Random}
 \newcommand{\srcpath}{../../src}
 \newcommand{\simpath}{../../sim}
 
@@ -62,40 +62,46 @@ title=\lstname %zeigt titel der datei an
 \includepdf[pages=-]{../Angabe.pdf}
 
 \section{Beispiel 1}
+
+\subsection{Diagramm}
+%TODO
+
+
 \subsection{Beantwortung der Fragen}
-Statement Coverage: Liefert Information darüber welche Zeilen/Statements des Codes ausgeführt wurden.
 
-Path Coverage: Ist eine Erweiterung der Branch Coverage. Überprüft alle möglichen Kombinationen von Branches. Zum Beispiel bei zwei if-Anweisungen: true+true, false+true, true+false, false+false.
-
-Expression Coverage: Überprüft die mögliche Werte bei einer Zuweisung und zählt mit wie oft welcher Wert zugewiesen wird. Bei einer logischen Zuweisung werden auch innere Ausdrücke betrachtet.
-
-FSM Coverage: Gibt von einer FSM an wie oft jeder Zustand besucht wurde und wie oft jede einzele Transition ausgeführt wurde.
-
-Hardware-Entwurf: Nein, das Problem sind z.B. die default-Zweige. Diese können dann gegebenenfalls bei der Coverage ignoriert werden.
-
-Code Coverage: Nein, Code Coverage heißt nur, dass der Code ausgeführt wurde, aber nicht, dass er fehlerfrei ist.
-
-\subsection{Coverage Report}
-
-Lücken: 
 \begin{itemize}
-	\item Register Index = -1	-> einfach Register > 32 nehmen
-	\item Register Decode Error -> siehe Register Index
-	\item Falscher Opcode -> kommt darauf an ob eine falscher Opcode in das Memory geladen werden
+	\item Randomisierte Werte sind nicht vorhersehbar. Es würden nur alle Fälle abgedeckt werden können, wenn unendlich viele Tests ausgeführt werden würden, was in der realen Welt nicht möglich ist.
+	Bei vorhersehbaren Werten würde man sichergehen können, dass auch Cornercases getestet werden.
+	\item Wurzelfunktion/Logarithmus (?). Je mehr Kombinationen ausgeführt werden desto geringer ist die Chance, dass eine Kombinationen ausgeführt wird, die noch nicht ausgeführt wurde.
+	\item
+				\begin{lstlisting}[numbers=none]
+constraint ra_0 {
+	ra dist { [0:0]:/50, [1:31]:/50 };
+}
+	
+constraint rb_0 {
+	rb dist { [0:0]:/50, [1:31]:/50 };
+}
+
+constraint nop_0 {
+	(cmd == Nop) -> (ra == 0) && (rb == 0);
+}
+				\end{lstlisting}
+		
+	\item \texttt{randc} wiederholt Werte erst dann wenn alle ausgeschöpft wurden.
+	\item Befehle: 21\\
+				Befehle, die keine Flags beeinflussen: 6\\
+				Befehle, die beide Flags beeinflussen: 11\\
+				Befehle, Carry Flag 0 und Z Flag beeinflussen: 4\\
+				
+				Berechnung:\\
+				keine Flags: 6 * 4 = 24
+				Flags: 11 * 4 * 4 = 176
+				Carry Flag 0: 4 * 4 * 2 = 32
+				Summe: 232
+				
+				%TODO: Test aus der Übung Frage
 \end{itemize}
-
-
-Coverage tcl-File:
-\lstinputlisting{\simpath/ComSimRegressionCoverage.tcl}
-
-Textdatei mit Coverage Report:
-\lstinputlisting{\simpath/coverage.txt}
-
-Assemblercode:
-\lstinputlisting[language={verilog}]{\simpath/regressiontest.ass}
-
-
-\section{Beispiel 2}
 
 \subsection{Source Code}
 
@@ -112,5 +118,7 @@ Der Sourcecode des Prol16 wurde nicht hinzugefügt, da der von der Elearning Pla
 \lstinputlisting[language={verilog}]{\srcpath/sv/top.sv}
 
 \lstinputlisting[language={tcl}]{\simpath/CompileSimRandCov.do}
+
+\subsection{Beispiel 2}
 
 \end{document}

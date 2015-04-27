@@ -9,6 +9,18 @@ class Prol16Opcode;
 	constraint ra_size {ra >= 0 && ra <= 31;};
 	constraint rb_size {rb >= 0 && rb <= 31;};
 	
+	// constraint ra_0 {
+		// ra dist { [0:0]:/50, [1:31]:/50 };
+	// }
+	
+	// constraint rb_0 {
+		// rb dist { [0:0]:/50, [1:31]:/50 };
+	// }
+	
+	// constraint nop_0 {
+		// (cmd == Nop) -> (ra == 0) && (rb == 0);
+	// }
+	
 	function new(int ra, int rb, Prol16Command cmd, pkgProl16::data_v data);
 		this.ra = ra;
 		this.rb = rb;
