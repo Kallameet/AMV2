@@ -1,0 +1,10 @@
+Xa			--> Gilt nicht: 0-->1
+XXa			--> Gilt
+Fa			--> Gilt
+G(a or b)	--> Gilt nicht: 0
+XG(a or b)	--> Gilt
+G(b -> a)	--> Gilt nicht: 0-->1
+G(b -> Fa)	--> Gilt
+G[b U a]	--> Gilt nicht: 0
+XG[b U a]	--> Gilt
+GFa			--> Gilt						immer wieder mal (z.B. Livelock)
