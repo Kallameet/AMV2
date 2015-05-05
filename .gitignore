@@ -2,7 +2,6 @@
 *.log
 *.out
 *.synctex.gz
-*Abgabe.pdf
 *.tps
 *.dvi
 *.synctex
