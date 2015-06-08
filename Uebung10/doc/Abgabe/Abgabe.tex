@@ -55,6 +55,9 @@ title=\lstname %zeigt titel der datei an
 
 %Beginn des Dokuments
 
+\newcommand{\srcpath}{../../src}
+\newcommand{\simpath}{../../sim}
+
 %Angabe
 \includepdf[pages=-]{../Angabe.pdf}
 
@@ -75,7 +78,10 @@ title=\lstname %zeigt titel der datei an
 \end{itemize}
 
 \section{PSL in Action}
-	
 
+
+\lstinputlisting[language={vhdl}]{\srcpath/SimpleBus-Bhv-ea.vhd}
+\lstinputlisting[language={verilog}]{\srcpath/vunit.psl}
+\lstinputlisting[language={tcl}]{\simpath/ComSim.do}
 
 \end{document}
