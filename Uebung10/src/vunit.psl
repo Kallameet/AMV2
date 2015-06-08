@@ -1,0 +1,15 @@
+vunit vSimpleBus(SimpleBus(Bhv)) {
+  default clock is (clk'event and clk = '1');
+  
+  property req is always (rose(request) -> {[*0 to 4]; (grant or aborting); not grant});
+  assert req;
+
+  property data_valid_prop is always ({rose(grant)} |=> {data_valid[*8] | data_valid[*16] | data_valid[*32]; not data_valid});
+  assert data_valid_prop;
+  
+  property isdone is always (fell(data_valid) -> done);
+  assert isdone;
+  
+  property not_req is always ({request} |=> not request until (done or aborting));
+  assert not_req;
+}
