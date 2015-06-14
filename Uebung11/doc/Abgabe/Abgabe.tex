@@ -61,27 +61,54 @@ title=\lstname %zeigt titel der datei an
 %Angabe
 \includepdf[pages=-]{../Angabe.pdf}
 
-%\section{LTL vs. CTL vs. PSL}
-%
-%\begin{itemize}
-	%\item Die Formel 
-		%\begin{equation*}
-			%\varphi_{CTL} = \textbf{EG}\textit{p}
-		%\end{equation*}
-		%ist nur in CTL möglich, da sie eine Aussage über die Existenz eines Pfades ist, was in LTL nicht möglich ist.
-	%\item Die LTL-Formel entspricht dem Reset und gilt für die Zähler-Kripke-Struktur aus der Vorlesung. Die CTL-Formel gilt nicht und ist sinnlos.
-	%\item Die Erweiterung mit regulären Ausdrücken verhilft PSL zu einer höheren Mächtigkeit.
-				%\begin{verbatim}
-				%assert always (a -> {next_a}[3:5](b));
-				%\end{verbatim}
-				%Wie man in diesem Beispiel sieht kann die PSL auch zählen, was in CTL und LTL nicht möglich ist.
-%\end{itemize}
-%
-%\section{PSL in Action}
-%
-%
-%\lstinputlisting[language={vhdl}]{\srcpath/SimpleBus-Bhv-ea.vhd}
-%\lstinputlisting[language={verilog}]{\srcpath/vunit.psl}
-%\lstinputlisting[language={tcl}]{\simpath/ComSim.do}
+\section{P(S + RO)L}
+\subsection{ALU}
+Bei der ALU wurden die einzelnen ALU-Befehle durchgegangen und je nach Befehl überprüft ob das Ergebnis stimmt. Die Flags wurden extra überprüft und für die ALU-Befehle die zusammen gehören in einer Property überprüft.
+
+\subsection{Control}
+Zyklus 1 und 2 werden und die einzelnen Befehle werden extra überprüft. Es wird überprüft ob die Output-Flags richtig gesetzt werden. Die Default-Zuweisung für die Flags werden nicht überprüft, da dies sehr aufwendig ist.
+
+\section{Theorie}
+
+\begin{itemize}
+	\item Bei Vacuity handelt es sich um nichts aussagende/leere Assertions. Ein Beispiel dafür wäre "always (a -> next b)", unter der Annahme das a nie zutrifft. Da a immer falsch ist, ist es irrelevant was auf der rechten Seite steht, man kann den bestehenden Ausdruck durch einen beliebigen boolschen Ausdruck ersetzen.
+Dieses Konzept ist wichtig, da damit mögliche Fehler aufgedeckt werden können. Nimmt man das obige Beispiel, erwartete sich die Person, die die Assertion schrieb, dass a irgendwann wahr ist.
+Es ist auch für andere Logiken wichtig, die obige Bedingung kann man ebenso in LTL/CTL beschreiben.
+  \item Signalverläufe
+		\begin{itemize}
+			\item x: 0 -> 0 -> 0 -> 0 -> 0 -> 0 …
+			\item x: 0 -> 0 -> 0 -> 0 -> 0 -> 0 …
+			\item x: 0 -> 1 -> 1 -> 0 -> 0 -> 0 … \\
+						y: 0 -> 1 -> 0 -> 0 -> 1 -> 0 …
+			\item x: 0 -> 1 -> 1 -> 0 -> 1 -> 0 … \\
+						y: 0 -> 1 -> 0 -> 0 -> 1 -> 0 …
+		\end{itemize}
+	\item Die schwache Version ergibt wenig Sinn, da sie immer wahr sein würde. Denn nach der Simulation könnte die \texttt{eventually} Bedingung noch erfüllt werden und im Zweifel ist die schwache Version wahr.
+	\item Es wird in einem Initialzustand begonnen. Dieser Zustand kommt zu den neuen Zuständen hinzu.
+Danach wird überprüft ob ein neuer Zustand eine Assertion verletzt. Falls eine Assertion verletzt wurde, wird ein Gegenbeispiel ausgegeben. Falls keine verletzt wurde, werden alle nachfolgenden Zustände ermittelt. Dies geschieht indem bei den zuvor überprüften Zuständen alle möglichen Eingabekombinationen angelegt werden. Sind bei den Nachfolgezuständen neue Zustände dabei werden diese wieder überprüft und ihre Nachfolger erzeugt. Sobald keine neuen Zustände gefunden werden, wird der Beweis ausgegeben.
+\end{itemize}
+
+\section{Model Checking: Anwendung}
+
+\subsection{Mutex}
+Anhand des kombinierten Graphen kann man erkennen, dass alle Bedingungen erfüllt werden. Es gibt keinen Zustand C1C2 und nach einem T Zustand kommt immer ein C Zustand.
+
+\begin{figure}[!htb]%
+\centering
+\includegraphics[width=\textwidth]{3_1}%
+\caption{Mutex Graph}%
+\label{}%
+\end{figure}
+
+\subsection{Mutex, Implementierung 2}
+Man kann anhand des Zustandsgraphen erkennen das die erste Bedingung nicht mehr erfüllt wird, denn es gibt nun einen Zustand C1C2 indem beide kritischen Zustand sind. Die letzten beiden Bedingungen werden jedoch weiterhin erfüllt. \\
+Gegenbeispiel: N1N2->(d1=1,d2=1)->T1T2->C1C2->N1N2
+
+\begin{figure}[!htb]%
+\centering
+\includegraphics[width=\textwidth]{3_2}%
+\caption{Mutex, Implementierung 2 Graph}%
+\label{}%
+\end{figure}
 
 \end{document}
