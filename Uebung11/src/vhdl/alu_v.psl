@@ -1,0 +1,50 @@
+vunit alu_v(alu(rtl)) {
+  default clock is (clk_i'event and clk_i = '1');
+  
+  --property fail_p is always (false);
+  --assert fail_p;
+
+  -- pass
+  property pass_a_p is always ((alu_func_i = alu_pass_a_c) -> result_o = side_a_i);
+  assert pass_a_p;
+
+  property pass_b_p is always ((alu_func_i = alu_pass_b_c) -> result_o = side_b_i);
+  assert pass_b_p;
+
+  -- logic
+  property and_p is always ((alu_func_i = alu_and_c) -> result_o = (side_a_i and side_b_i));
+  assert and_p;
+
+  property or_p is always ((alu_func_i = alu_or_c) -> result_o = (side_a_i or side_b_i));
+  assert or_p;
+
+  property xor_p is always ((alu_func_i = alu_xor_c) -> result_o = (side_a_i xor side_b_i));
+  assert xor_p;
+
+  property not_p is always ((alu_func_i = alu_not_c) -> result_o = (not side_a_i));
+  assert not_p;
+
+  -- TODO add, sub, inc, dec -> how to do without a variable?
+  -- property add_p is always ((alu_func_i = alu_add_c) -> unsigned(result_o) = unsigned('0' & side_a_i & '1') + unsigned('0' & side_b_i & carry_i));
+  -- assert add_p;
+
+  property slc_p is always ((alu_func_i = alu_slc_c) -> result_o = (side_a_i(bit_width_g-2 downto 0) & carry_i));
+  assert slc_p;
+
+  property src_p is always ((alu_func_i = alu_src_c) -> result_o = (carry_i & side_a_i(bit_width_g-1 downto 1)));
+  assert src_p;
+
+  -- zero flag
+  property zero_p is always (zero_o -> result_o = (result_o'range => '0'));
+  assert zero_p;
+
+  -- carry flag
+  property carry_0_p is always ((alu_func_i = alu_and_c) or (alu_func_i = alu_or_c) or (alu_func_i = alu_xor_c) or (alu_func_i = alu_not_c) -> (carry_o = '0'));
+  assert carry_0_p;
+
+  property carry_slc_p is always ((alu_func_i = alu_slc_c) -> (carry_o = side_a_i(bit_width_g-1)));
+  assert carry_slc_p;
+
+  property carry_src_p is always ((alu_func_i = alu_src_c) -> (carry_o = side_a_i(0)));
+  assert carry_src_p;
+}
