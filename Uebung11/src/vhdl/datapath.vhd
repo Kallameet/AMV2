@@ -71,6 +71,7 @@ begin
     generic map (
       bit_width_g => data_vec_length_c)
     port map (
+      clk_i       => clk_i, -- for verification
       side_a_i    => AluSideA,
       side_b_i    => RegTmpB,
       carry_i     => carry_i,
