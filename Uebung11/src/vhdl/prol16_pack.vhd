@@ -145,6 +145,7 @@ package prol16_pack is
       bit_width_g : integer := 16);
 
     port (
+	  clk_i      : in std_ulogic; -- for verification
       side_a_i   : in std_ulogic_vector(bit_width_g - 1 downto 0);
       side_b_i   : in std_ulogic_vector(bit_width_g - 1 downto 0);
       carry_i    : in std_ulogic;
