@@ -1,0 +1,127 @@
+vunit control_v(control(rtl)) {
+  default clock is (clk_i'event and clk_i = '1');
+
+  sequence opcode_start (boolean is_opc) is {
+    prev(mem_rd_stb_o = '1')
+    and prev(clk_en_op_code_o = '1')
+    and is_opc
+  };
+
+  property jump_p is always (opcode_start(op_code_i = opc_jump_c and reg_decode_error_i = '0') |-> sel_pc_o = '0');
+  assert jump_p;
+
+  property jumpc_p is always (opcode_start(op_code_i = opc_jumpc_c and reg_decode_error_i = '0' and carry_i = '1') |-> sel_pc_o = '0');
+  assert jumpc_p;
+
+  property jumpz_p is always (opcode_start(op_code_i = opc_jumpz_c and reg_decode_error_i = '0' and zero_i = '1') |-> sel_pc_o = '0');
+  assert jumpz_p;
+
+  property store_p is always (opcode_start(op_code_i = opc_store_c) |=> (mem_rd_stb_o = '0' and mem_wr_stb_o = '1'));
+  assert store_p;
+
+  property sleep_p is always (opcode_start(op_code_i = opc_sleep_c) |-> { clk_en_pc_o = '0'; cpu_halt_o = '1' });
+  assert sleep_p;
+
+  -- TODO illegal doesnt occur in regressiontest
+  property illegal_instr_p is always (opcode_start(op_code_i /= opc_jump_c and
+						   op_code_i /= opc_nop_c and
+						   op_code_i /= opc_sleep_c and
+						   op_code_i /= opc_loadi_c and
+						   op_code_i /= opc_load_c and
+						   op_code_i /= opc_store_c and
+						   op_code_i /= opc_jump_c and
+						   op_code_i /= opc_jumpc_c and
+						   op_code_i /= opc_jumpz_c and
+						   op_code_i /= opc_move_c and
+						   op_code_i /= opc_and_c and
+						   op_code_i /= opc_or_c and
+						   op_code_i /= opc_xor_c and
+						   op_code_i /= opc_not_c and
+						   op_code_i /= opc_add_c and
+						   op_code_i /= opc_addc_c and
+						   op_code_i /= opc_sub_c and
+						   op_code_i /= opc_subc_c and
+						   op_code_i /= opc_comp_c and
+						   op_code_i /= opc_inc_c and
+						   op_code_i /= opc_dec_c and
+						   op_code_i /= opc_shl_c and
+						   op_code_i /= opc_shr_c and
+						   op_code_i /= opc_shlc_c and
+						   op_code_i /= opc_shrc_c) |=> illegal_inst_o = '1' and clk_en_reg_file_o = '0');
+  assert illegal_instr_p;
+
+  property reg_decode_err_p is always (opcode_start(reg_decode_error_i = '1') |=> illegal_inst_o = '1');
+  assert reg_decode_err_p;
+
+  sequence cycle_2 (boolean check) is {
+    prev(clk_en_pc_o = '1')
+    and check
+  };
+
+  -- alu func control signal
+  property alu_and_p is always (cycle_2(op_code_i = opc_and_c) |-> alu_func_o = alu_and_c);
+  assert alu_and_p;
+
+  property alu_or_p is always (cycle_2(op_code_i = opc_or_c) |-> alu_func_o = alu_or_c);
+  assert alu_or_p;
+
+  property alu_xor_p is always (cycle_2(op_code_i = opc_xor_c) |-> alu_func_o = alu_xor_c);
+  assert alu_xor_p;
+
+  property alu_not_p is always (cycle_2(op_code_i = opc_not_c) |-> alu_func_o = alu_not_c);
+  assert alu_not_p;
+
+  property alu_add_p is always (cycle_2(op_code_i = opc_add_c or op_code_i = opc_addc_c) |-> alu_func_o = alu_add_c);
+  assert alu_add_p;
+
+  property alu_sub_p is always (cycle_2(op_code_i = opc_sub_c or op_code_i = opc_subc_c) |-> alu_func_o = alu_sub_c);
+  assert alu_sub_p;
+
+  property alu_comp_p is always (cycle_2(op_code_i = opc_comp_c) |-> alu_func_o = alu_sub_c);
+  assert alu_comp_p;
+
+  property alu_inc_p is always (cycle_2(op_code_i = opc_inc_c) |-> alu_func_o = alu_inc_c);
+  assert alu_inc_p;
+
+  property alu_dec_p is always (cycle_2(op_code_i = opc_dec_c) |-> alu_func_o = alu_dec_c);
+  assert alu_dec_p;
+
+  property alu_slc_p is always (cycle_2(op_code_i = opc_shl_c or op_code_i = opc_shlc_c) |-> alu_func_o = alu_slc_c);
+  assert alu_slc_p;
+
+  property alu_src_p is always (cycle_2(op_code_i = opc_shr_c or op_code_i = opc_shrc_c) |-> alu_func_o = alu_src_c);
+  assert alu_src_p;
+
+  property alu_move_p is always (cycle_2(op_code_i = opc_move_c) |-> alu_func_o = alu_pass_b_c);
+  assert alu_move_p;
+
+  -- carry handling TODO: correct?
+  property carry_p is always (cycle_2(op_code_i = opc_addc_c or
+                                      op_code_i = opc_subc_c or
+                                      op_code_i = opc_shlc_c or
+                                      op_code_i = opc_shrc_c) |=> carry_o = carry_i);
+  assert carry_p;
+  
+  -- TODO is this necessary?
+  property carry_0_p is always (cycle_2(op_code_i = opc_load_c or
+                                        op_code_i = opc_loadi_c or
+                                        op_code_i = opc_store_c or
+                                        op_code_i = opc_jump_c or
+                                        op_code_i = opc_jumpc_c or
+                                        op_code_i = opc_jumpz_c or
+                                        op_code_i = opc_nop_c or
+                                        op_code_i = opc_move_c) |=> carry_o = '0');
+  assert carry_0_p;
+
+  property load_p is always (cycle_2(op_code_i = opc_load_c) |-> { sel_addr_o = '1' and sel_load_o = '1' and clk_en_op_code_o = '0'; mem_rd_stb_o = '1' and clk_en_op_code_o = '1' });
+  assert load_p;
+
+  property loadi_p is always (cycle_2(op_code_i = opc_loadi_c) |-> { sel_pc_o = '1' and clk_en_pc_o = '1' and alu_func_o = alu_inc_c and sel_load_o = '1' and clk_en_op_code_o = '0'; mem_rd_stb_o = '1' and clk_en_op_code_o = '1' });
+  assert loadi_p;
+
+  property store_1_p is always (cycle_2(op_code_i = opc_store_c) |-> { sel_addr_o = '1' and clk_en_op_code_o = '0' and clk_en_reg_file_o = '0'; mem_rd_stb_o = '1' and clk_en_op_code_o = '1' });
+  assert store_1_p;
+
+  property reg_file_p is always (cycle_2(op_code_i = opc_jump_c or op_code_i = opc_jumpc_c or op_code_i = opc_jumpz_c or op_code_i = opc_nop_c or op_code_i = opc_comp_c) |-> clk_en_reg_file_o = '0');
+  assert reg_file_p;
+}
